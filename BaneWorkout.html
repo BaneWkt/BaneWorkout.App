@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpeg" href="1762683699224.jpeg">
+  <title>BANE WORKOUT - Suivi & Calculateur Expert V5.5</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Inter:wght@300;400;700&display=swap');
+
+    html {
+      box-sizing: border-box
+    }
+
+    ,
+    ::before,
+    ::after {
+      box-sizing: inherit
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #0a0a0a 0%, #330000 100%);
+      color: #e0e0e0
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 10px;
+      border: 3px solid #ff0000;
+      box-shadow: 0 0 40px rgba(255, 0, 0, .6);
+      position: relative
+    }
+
+    .browser-note {
+      position: absolute;
+      top: 5px;
+      right: 15px;
+      font-size: .6em;
+      color: #ff0000;
+      background-color: transparent;
+      padding: 0 4px;
+      border-radius: 4px;
+      z-index: 10;
+      opacity: .4;
+      font-style: normal;
+      font-weight: bold;
+      border: none;
+      letter-spacing: 1px;
+      font-family: 'Anton', sans-serif
+    }
+
+    h1 {
+      font-family: 'Anton', sans-serif;
+      color: #ff0000;
+      text-align: center;
+      margin-top: 0;
+      font-weight: normal;
+      letter-spacing: 4px;
+      line-height: 1;
+      position: relative
+    }
+
+    h1 span {
+      display: block;
+      font-size: 1.8em
+    }
+
+    h3.subtitle {
+      display: none
+    }
+
+    h2 {
+      color: #c00;
+      text-align: center;
+      border-bottom: 2px solid #c00;
+      padding-bottom: 10px;
+      margin-top: 30px;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1.5px
+    }
+
+    .section {
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      background-color: #222
+    }
+
+    #step1-data-collection {
+      background-color: #2a2a2a
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #ff0000
+    }
+
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      background-color: #333;
+      color: #fff;
+      border: 1px solid #555;
+      font-family: 'Inter', sans-serif
+    }
+
+    textarea {
+      resize: vertical
+    }
+
+    button {
+      background-color: #c00;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color .3s, transform .1s;
+      width: 100%;
+      padding: 12px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1px
+    }
+
+    button:hover {
+      background-color: #ff0000
+    }
+
+    .buy-button-pack {
+      background-color: #FF8C00
+    }
+
+    .buy-button-pack:hover {
+      background-color: #FF4500
+    }
+
+    .buy-button-training {
+      background-color: #ff0000 !important;
+      margin-top: 5px !important;
+      font-size: .8em;
+      padding: 6px;
+      width: 90%
+    }
+
+    .buy-button-training:hover {
+      background-color: #c00 !important
+    }
+
+    .view-full-history-btn {
+      background-color: #333;
+      font-size: .9em;
+      padding: 8px;
+      margin-top: 5px
+    }
+
+    .view-full-history-btn:hover {
+      background-color: #555
+    }
+
+    .result {
+      margin-top: 15px;
+      padding: 15px;
+      border: 2px solid #ff0000;
+      border-radius: 4px;
+      background-color: #111
+    }
+
+    .macro-detail {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #ff0000
+    }
+
+    .bmi-status {
+      font-weight: bold;
+      margin-left: 10px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #000
+    }
+
+    .status-normal {
+      background-color: #4CAF50
+    }
+
+    .status-surpoids {
+      background-color: #FFC107
+    }
+
+    .status-obesite,
+    .status-maigreur {
+      background-color: #F44336
+    }
+
+    #step2-premium-pack {
+      display: flex;
+      flex-direction: row;
+      gap: 20px
+    }
+
+    #step2-premium-pack>div {
+      flex: 1
+    }
+
+    .pack-offer {
+      border: 2px solid #ff0000;
+      background: #111;
+      padding: 20px;
+      border-radius: 8px
+    }
+
+    .pack-header h3 {
+      font-size: 1.5em;
+      color: #fff;
+      margin-bottom: 5px;
+      text-align: center;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1px
+    }
+
+    .pack-header p.price {
+      font-size: 2em;
+      font-weight: bold;
+      color: #FFD700;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 15px;
+      border-bottom: 1px dashed #333;
+      padding-bottom: 10px
+    }
+
+    .pack-details ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px
+    }
+
+    .pack-details li {
+      margin-bottom: 8px;
+      color: #ccc;
+      font-size: .95em
+    }
+
+    .pack-details li::before {
+      content: '🚨';
+      margin-right: 8px;
+      color: #ff0000;
+      font-weight: bold
+    }
+
+    .pack-details li.bonus::before {
+      content: '⭐';
+      color: gold
+    }
+
+    .bonus-title {
+      color: #ff0000;
+      font-weight: bold;
+      margin-top: 15px;
+      border-top: 1px solid #444;
+      padding-top: 10px
+    }
+
+    .copyright-notice {
+      text-align: center;
+      font-size: .8em;
+      color: #666;
+      margin-top: 15px
+    }
+
+    .main-tabs-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-bottom: 0;
+      border-bottom: none
+    }
+
+    .main-tab-button {
+      flex-grow: 1;
+      padding: 15px 10px;
+      background-color: #333;
+      color: #ccc;
+      border: 1px solid #c00;
+      border-bottom: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 6px 6px 0 0;
+      transition: background-color .2s, color .2s;
+      margin-right: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1px
+    }
+
+    .main-tab-button:last-child {
+      margin-right: 0
+    }
+
+    .main-tab-button.active {
+      background-color: #c00;
+      color: white;
+      border-color: #c00;
+      z-index: 2
+    }
+
+    .main-tab-content {
+      display: none;
+      margin-top: 0;
+      border-top: 1px solid #c00;
+      background: #1a1a1a;
+      padding: 20px;
+      border: 1px solid #c00;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-radius: 0 0 8px 8px
+    }
+
+    .main-tab-content.active {
+      display: block
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      margin-bottom: 0;
+      border-bottom: none
+    }
+
+    .tab-button {
+      flex-grow: 1;
+      padding: 15px 10px;
+      background-color: #333;
+      color: #ccc;
+      border: 1px solid #c00;
+      border-bottom: none;
+      cursor: pointer;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 6px 6px 0 0;
+      transition: background-color .2s, color .2s;
+      margin-right: 1px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-family: 'Anton', sans-serif;
+      letter-spacing: 1px
+    }
+
+    .tab-button:last-child {
+      margin-right: 0
+    }
+
+    .tab-button.active {
+      background-color: #c00;
+      color: white;
+      border-color: #c00;
+      z-index: 2
+    }
+
+    .tab-content {
+      padding-top: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      display: none;
+      margin-top: 0;
+      border-top: 1px solid #c00
+    }
+
+    .tab-content.active {
+      display: block
+    }
+
+    .resource-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      justify-content: center;
+      padding: 10px 0
+    }
+
+    .resource-item {
+      padding: 10px 5px;
+      background: #333;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      color: #ff0000;
+      cursor: pointer;
+      transition: background-color .2s, border .3s;
+      border: 2px solid #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0;
+      min-height: 100px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .resource-item:hover {
+      background-color: #444;
+      border-color: #ff0000
+    }
+
+    .resource-item[data-unlocked="true"] {
+      border: 2px solid #008800;
+      background-color: #1e3c1e
+    }
+
+    .resource-item[data-unlocked="true"]:hover {
+      background-color: #2a502a
+    }
+
+    .resource-title-main {
+      font-size: 1em;
+      color: #fff;
+      font-weight: bold;
+      margin-bottom: 2px;
+      line-height: 1.2;
+      pointer-events: none;
+      flex-grow: 1
+    }
+
+    .resource-item[data-unlocked="true"] .resource-title-main {
+      color: #fff
+    }
+
+    .training-lock {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(26, 26, 26, .85);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      z-index: 10;
+      padding: 5px;
+      transition: opacity .3s
+    }
+
+    .resource-item[data-unlocked="true"] .training-lock {
+      display: none
+    }
+
+    .training-lock-icon {
+      font-size: 1.8em;
+      color: #FFD700;
+      margin-bottom: 2px;
+      text-shadow: 0 0 5px rgba(255, 215, 0, .6)
+    }
+
+    .training-lock-message {
+      display: none
+    }
+
+    .training-lock-price {
+      color: #FFD700;
+      font-weight: bold;
+      font-size: 1em;
+      margin-bottom: 0;
+      text-shadow: 0 0 5px rgba(255, 215, 0, .6)
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, .95)
+    }
+
+    .modal-content {
+      background-color: #1a1a1a;
+      margin: 5% auto;
+      padding: 25px;
+      border: 2px solid #c00;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 8px;
+      box-shadow: 0 0 30px rgba(255, 0, 0, .5);
+      max-height: 90vh;
+      overflow-y: auto
+    }
+
+    .article-content h3 {
+      color: #ff0000;
+      border-bottom: 1px dashed #555;
+      padding-bottom: 5px;
+      font-size: 1.3em;
+      margin-top: 20px
+    }
+
+    .article-content ul,
+    .article-content ol {
+      list-style: disc;
+      padding-left: 20px
+    }
+
+    .article-content li {
+      margin-bottom: 10px
+    }
+
+    .close-btn {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 20px;
+      font-size: .85em;
+      color: #aaa
+    }
+
+    .article-rating-system {
+      margin-top: 20px;
+      border-top: 1px solid #444;
+      padding-top: 10px;
+      text-align: center
+    }
+
+    .article-rating-system .stars,
+    .rating-system .stars {
+      font-size: 1.8em;
+      color: #555;
+      cursor: pointer
+    }
+
+    .article-rating-system p {
+      font-size: .85em;
+      color: #ccc;
+      margin-top: 5px
+    }
+
+    .stars span {
+      cursor: pointer;
+      transition: color .1s
+    }
+
+    #admin-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #FF0000;
+      color: white;
+      border: 1px solid #FFDD00;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      text-align: center;
+      line-height: 35px;
+      font-size: 1.1em;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 0 8px rgba(255, 0, 0, .6);
+      transition: transform .2s
+    }
+
+    #admin-toggle:hover {
+      transform: scale(1.1) rotate(5deg)
+    }
+
+    #admin-access-modal {
+      display: none;
+      position: fixed;
+      bottom: 65px;
+      right: 20px;
+      background-color: #000;
+      border: 2px solid #FFC107;
+      padding: 15px;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(255, 193, 7, .5);
+      width: 300px;
+      z-index: 999
+    }
+
+    #admin-secret-modal {
+      display: none;
+      position: fixed;
+      z-index: 200;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, .98)
+    }
+
+    #admin-secret-modal .modal-content {
+      background-color: #000;
+      border: 3px solid #00AAFF;
+      max-width: 95%;
+      max-height: 95vh;
+      box-shadow: 0 0 50px rgba(0, 170, 255, .8)
+    }
+
+    #admin-secret-modal h2 {
+      color: #00AAFF
+    }
+
+    .program-card {
+      background-color: #222;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-left: 5px solid #00AAFF
+    }
+
+    #support-section h2 {
+      color: #FFDD00;
+      border-bottom: 2px solid #FFDD00
+    }
+
+    #support-button {
+      background-color: #FFDD00;
+      transition: background-color .3s
+    }
+
+    #support-button:hover {
+      background-color: #FFA500
+    }
+
+    .like-button {
+      background-color: transparent;
+      color: #ff0000;
+      border: 2px solid #ff0000;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: .9em;
+      cursor: pointer;
+      transition: background-color .2s, color .2s
+    }
+
+    .like-button:hover {
+      background-color: #ff0000;
+      color: #000
+    }
+
+    .like-button:disabled {
+      cursor: not-allowed;
+      opacity: .5
+    }
+
+    #main-header-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      font-size: .9em
+    }
+
+    .table-responsive {
+      overflow-x: auto
+    }
+
+    .table-responsive table {
+      min-width: 400px;
+      width: 100%
+    }
+
+    @media (max-width:650px) {
+      .container {
+        padding: 15px
+      }
+
+      .resource-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr))
+      }
+
+      .tab-button,
+      .main-tab-button {
+        font-size: .7em;
+        padding: 10px 5px
+      }
+
+      #admin-access-modal {
+        right: 10px;
+        width: 260px
+      }
+
+      #admin-toggle {
+        bottom: 10px;
+        right: 10px
+      }
+
+      .pack-header h3 {
+        font-size: 1.3em
+      }
+
+      .pack-header p.price {
+        font-size: 1.8em
+      }
+
+      #step2-premium-pack {
+        flex-direction: column
+      }
+
+      .buy-button-training {
+        font-size: .75em;
+        padding: 6px
+      }
+    }
+  </style>
+</head>
+
+<body onload="initializeApp()">
+  <div class="container">
+    <div class="browser-note" id="header-note">Ouvrir par navigateur 🌐</div>
+    <h1><span>BANE</span><span>WORKOUT</span></h1>
+    <div id="main-header-info"><a href="https://www.instagram.com/baneworkout.app?igsh=MWhhZ3g4bXMwYjY3ZQ==" target="_blank" style="color:#ff0000; text-decoration:none; font-weight:bold; font-family:'Anton',sans-serif; margin-right: auto;">📸 Instagram: @baneworkout.app</a>
+      <div id="placeholder-link" style="color:#ff0000; font-weight:bold; font-family:'Anton',sans-serif; cursor:pointer;">...</div>
+    </div>
+    <h3 class="subtitle"></h3>
+    <div class="main-tabs-nav" id="primary-tabs-nav">
+      <div class="main-tab-button active" onclick="openPrimaryTab(event,'primary-tab-program')">📚 PROGRAMME</div>
+      <div class="main-tab-button" onclick="openPrimaryTab(event,'primary-tab-account')">👤 MON COMPTE 🔒</div>
+      <div class="main-tab-button" onclick="openPrimaryTab(event,'primary-tab-tools')">🔬 CALCULATEURS</div>
+      <div class="main-tab-button" onclick="openPrimaryTab(event,'primary-tab-community')">🎓 FORMATION</div>
+      <div class="main-tab-button" onclick="openPrimaryTab(event,'primary-tab-contact')">📧 CONTACT</div>
+    </div>
+    <div id="primary-tab-program" class="main-tab-content active">
+      <div id="stepper-step-1" class="stepper-content">
+        <div id="step1-data-collection" class="section">
+          <h2>ÉTAPE 1 : VOS INFORMATIONS PERSONNELLES</h2><label for="userEmail">Votre Email (Obligatoire pour le suivi/récapitulatif):</label><input type="email" id="userEmail" required placeholder="nom@exemple.com" autocomplete="off"><label for="gender">Sexe:</label><select id="gender">
+            <option value="male">Homme</option>
+            <option value="female">Femme</option>
+          </select><label for="age">Âge:</label><input type="number" id="age" min="15" max="100" required><label for="weight">Poids (kg):</label><input type="number" id="weight" min="30" step="0.1" required><label for="height">Taille (cm):</label><input type="number" id="height" min="100" max="250" required><label for="activity">Niveau d'Activité:</label><select id="activity">
+            <option value="1.2">Sédentaire (peu ou pas d'exercice)</option>
+            <option value="1.375">Légèrement Actif (exercice léger 1-3 fois/semaine)</option>
+            <option value="1.55">Modérément Actif (exercice modéré 3-5 fois/semaine)</option>
+            <option value="1.725">Très Actif (exercice intense 6-7 fois/semaine)</option>
+            <option value="1.9">Extrêmement Actif (exercice très intense &amp; travail physique)</option>
+          </select><label for="goal">Objectif Principal:</label><select id="goal">
+            <option value="cut">Perte de poids (Sèche)</option>
+            <option value="mass">Prise de masse (Muscle)</option>
+            <option value="maintain">Maintien du poids</option>
+            <option value="performance">Performance / Force</option>
+          </select><label for="material">Avez-vous du Matériel de Musculation ?</label><select id="material">
+            <option value="yes">Oui (Salle de Sport / Équipement Complet)</option>
+            <option value="no">Non (Programme Poids du Corps uniquement)</option>
+          </select><button id="validate-step1-btn" onclick="validateStep1()">VALIDER ET VOIR LE COACHING</button>
+          <div id="tdeeResult" class="result" style="display: none;">
+            <p><strong>Informations validées !</strong></p>
+            <p>IMC (Indice de Masse Corporelle): <span id="bmiValue" style="font-weight: bold;"></span> <span id="bmiStatus" class="bmi-status"></span></p>
+            <p>Calories de Maintien (TDEE estimées): <span id="maintenanceCals" style="font-weight: bold;"></span> kcal</p>
+            <p style="font-weight: bold; color: #ff0000;">Objectif Calorique estimé: <span id="goalCals"></span> kcal</p>
+            <div class="macro-detail">
+              <p style="font-weight: bold;">Répartition des Macronutriments pour l'Objectif :</p>
+              <p>Protéines: <span id="protGrams" style="font-weight: bold;"></span> g | Lipides: <span id="fatGrams" style="font-weight: bold;"></span> g | Glucides: <span id="carbGrams" style="font-weight: bold;"></span> g</p>
+              <p style="font-size: 0.8em; color: #888;" id="macroTip"></p>
+            </div>
+            <p style="font-weight: bold; color: #ff0000; margin-top: 10px;">Vos informations sont prêtes. Passez à l'étape suivante.</p>
+          </div>
+        </div>
+      </div>
+      <div id="stepper-step-2" class="stepper-content" style="display: none;">
+        <div id="step2-premium-pack" class="section">
+          <h2>ÉTAPE 2 : LES PACKS DE PROGRAMMES</h2>
+          <p style="text-align: center;">Vos données (TDEE: <strong id="recap-goalCals" style="color: #ff0000;"></strong> kcal, Poids: <strong id="recap-weight" style="color: #ff0000;"></strong> kg) ont été enregistrées.</p>
+          <p style="text-align: center;">Choisissez le niveau de suivi qui vous correspond.</p>
+          <div class="pack-offer">
+            <div class="pack-header">
+              <h3>PACK PROGRAMME BANE ONE</h3>
+              <p class="price">9,99 €</p>
+            </div>
+            <div class="pack-details">
+              <p>Ce pack inclut :</p>
+              <ul>
+                <li>Programme sport basé sur vos données (Matériel et Objectif).</li>
+                <li>Programme diète (7 repas) calibré sur vos Macronutriments.</li>
+                <li class="bonus">Accès au Planificateur de Séance (Suivi de vos trainings).</li>
+              </ul>
+            </div><button class="buy-button-pack" onclick="handlePackPurchase('Bane One', 9.99)">ACHETER LE PACK BANE ONE (9,99 €)</button>
+          </div>
+          <div class="pack-offer">
+            <div class="pack-header">
+              <h3>PACK COACHING PREMIUM BANE</h3>
+              <p class="price">49,90 €</p>
+            </div>
+            <div class="pack-details">
+              <p>Ce pack déverrouille l'accès au Suivi Pro et inclut :</p>
+              <ul>
+                <li>Programme sport adaptable suivant votre progression.</li>
+                <li>Programme diète adaptable suivant votre progression.</li>
+                <li>Accès au Planificateur de Séance (Suivi de vos trainings).</li>
+                <li class="bonus">Accès au Tableau de Progression (Poids, Mensurations) et envoi de courriel de suivi.</li>
+                <li class="bonus">Priorité dans les réponses (sous 24h).</li>
+              </ul>
+            </div><button class="buy-button-pack" onclick="handlePackPurchase('Premium Bane', 49.90)">ACHETER LE PACK PREMIUM BANE (49,90 €)</button>
+          </div>
+          <p class="copyright-notice">© BaneWorkout - Toute reproduction interdite.</p>
+        </div>
+      </div>
+      <div id="stepper-step-3" class="stepper-content" style="display: none;">
+        <div class="tabs" id="inner-tabs-step3">
+          <div class="tab-button active" data-tab="training-planner" onclick="openTab(event,'training-planner','inner-tabs-step3')">🗓️ PLANIFICATEUR PRO</div>
+          <div class="tab-button" data-tab="progression-tracker" onclick="openTab(event,'progression-tracker','inner-tabs-step3')">📊 SUIVI DE PROGRESSION PREMIUM 🔒</div>
+        </div>
+        <div id="training-planner" class="section tab-content active">
+          <h2>🗓️ PLANIFICATEUR D'ENTRAÎNEMENT PRO</h2>
+          <div id="premium-planner-message" style="display: none; text-align: center; padding: 15px; background: #008800; border-radius: 2px; font-weight: bold; color: white; margin-bottom: 15px; font-family:'Anton',sans-serif">✅ ACCÈS AU PLANIFICATEUR DÉVERROUILLÉ !</div>
+          <div id="log-session-form">
+            <h3>ENREGISTRER UNE NOUVELLE SÉANCE</h3><label for="session-date">Date de la Séance:</label><input type="date" id="session-date" required><label for="session-muscle">Groupe Musculaire Entraîné:</label><input type="text" id="session-muscle" placeholder="Ex: Pectoraux/Triceps/Épaules" required><label for="session-rating">Note de la Séance (1-5):</label><input type="number" id="session-rating" min="1" max="5" value="4"><label for="session-mood">Humeur Générale (V3.1):</label><select id="session-mood">
+              <option value="Excellent">💪 Excellent</option>
+              <option value="Bon">🙂 Bon</option>
+              <option value="Moyen">😐 Moyen</option>
+              <option value="Fatigué">🥵 Fatigué</option>
+              <option value="Mauvais">😡 Mauvais</option>
+            </select><label for="session-summary">Détails/Meilleures Séries:</label><textarea id="session-summary" rows="3" placeholder="Ex: DC 4x10 @ 90kg. J'ai eu une bonne congestion. Meilleure semaine pour le squat !"></textarea><button onclick="logSession()">ENREGISTRER LA SÉANCE</button>
+          </div>
+          <hr style="border-color: #444; margin: 30px 0;">
+          <div id="session-history">
+            <h3>HISTORIQUE DES 10 DERNIÈRES SÉANCES</h3>
+            <div class="table-responsive">
+              <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                  <tr style="background-color: #333;">
+                    <th style="padding: 10px; border-bottom: 2px solid #c00;">Date</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #c00;">Groupe</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #c00;">Détails & Humeur</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #c00; width: 60px;">Note</th>
+                  </tr>
+                </thead>
+                <tbody id="history-body">
+                  <tr>
+                    <td colspan="4" style="padding: 15px; text-align: center; color: #aaa;">Aucune séance enregistrée pour le moment.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div><button id="view-full-history" class="view-full-history-btn" onclick="renderSessionHistory(true)" style="display: none;">AFFICHER L'HISTORIQUE COMPLET (20 sessions)</button>
+          </div>
+        </div>
+        <div id="progression-tracker" class="section tab-content">
+          <h2>📊 SUIVI DE PROGRESSION (PREMIUM BANE)</h2>
+          <div id="premium-tracker-message" style="display: none; text-align: center; padding: 15px; background: #c00; border-radius: 2px; font-weight: bold; color: white; margin-bottom: 15px; font-family:'Anton',sans-serif">⚠️ FONCTIONNALITÉ RÉSERVÉE AU PACK PREMIUM BANE. ACHETEZ-LE POUR DÉVERROUILLER LE SUIVI PRO !</div>
+          <div id="progression-form-section" style="display: none;">
+            <h3>NOUVELLE MESURE</h3><label for="prog-date">Date de la Mesure:</label><input type="date" id="prog-date" required><label for="prog-weight">Poids Actuel (kg):</label><input type="number" id="prog-weight" step="0.1" required><label for="prog-waist">Tour de Taille (cm):</label><input type="number" id="prog-waist" step="0.5"><label for="prog-chest">Tour de Poitrine (cm):</label><input type="number" id="prog-chest" step="0.5"><label for="prog-arms">Tour de Bras (cm):</label><input type="number" id="prog-arms" step="0.1"><label for="prog-notes">Notes/Commentaires (Optionnel):</label><textarea id="prog-notes" rows="2" placeholder="Ex: Photos prises. Je me sens moins gonflé, plus sec."></textarea><button onclick="logProgression()">ENREGISTRER LA PROGRESSION</button><button class="buy-button-pack" style="margin-top:15px; background-color:#5a2b8e;" onclick="sendProgressionEmail()">📧 ENVOYER MON SUIVI AU COACH</button>
+          </div>
+          <hr style="border-color: #444; margin: 30px 0;">
+          <div id="progression-history">
+            <h3>HISTORIQUE DES MESURES</h3>
+            <div class="table-responsive">
+              <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                  <tr style="background-color: #333;">
+                    <th style="padding: 10px; border-bottom: 2px solid #c00;">Date</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #c00;">Poids (kg)</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #c00;">Taille (cm)</th>
+                    <th style="padding: 10px; border-bottom: 2px solid #c00;">Bras (cm)</th>
+                  </tr>
+                </thead>
+                <tbody id="progression-body">
+                  <tr>
+                    <td colspan="4" style="padding: 15px; text-align: center; color: #aaa;">Aucune mesure enregistrée.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="primary-tab-account" class="main-tab-content">
+      <div class="section">
+        <h2>👤 MON COMPTE ET RÉCAPITULATIF</h2>
+        <div id="account-user-settings">
+          <h3>MES PARAMÈTRES PERSONNELS</h3>
+          <p><strong>Email :</strong> <span id="account-email">N/A</span></p>
+          <p><strong>Sexe/Âge :</strong> <span id="account-gender-age">N/A</span></p>
+          <p><strong>Poids/Taille :</strong> <span id="account-weight-height">N/A</span></p>
+          <p><strong>Niveau d'Activité :</strong> <span id="account-activity">N/A</span></p>
+          <p><strong>Matériel :</strong> <span id="account-material">N/A</span></p>
+          <p style="margin-top: 15px;"><strong>Objectif Actuel :</strong> <strong id="account-goal" style="color: #ff0000;">N/A</strong></p>
+          <p><strong>Objectif Calorique (TDEE) :</strong> <strong id="account-goalCals">N/A</strong> kcal</p><button onclick="document.getElementById('step1-data-collection').scrollIntoView({ behavior: 'smooth' }); openPrimaryTab(event, 'primary-tab-program'); showStepperStep(1);">METTRE À JOUR MES INFORMATIONS (ÉTAPE 1)</button>
+        </div>
+        <hr style="border-color: #444; margin: 30px 0;">
+        <div id="account-program-recap">
+          <h3>PROGRAMME ET DIÈTE PERSONNELS</h3>
+          <div id="user-program-content">
+            <p id="program-access-message" style="text-align: center; color: #ff0000; font-weight: bold; padding: 10px; border: 1px dashed #ff0000; border-radius: 4px;">⚠️ Programme & Diète non accessibles. Veuillez acheter un pack.</p>
+          </div>
+        </div>
+        <hr style="border-color: #444; margin: 30px 0;">
+        <div id="account-session-history">
+          <h3>HISTORIQUE RAPIDE DES SÉANCES</h3>
+          <p id="account-session-summary">Aucune séance enregistrée.</p><button onclick="openPrimaryTab(event, 'primary-tab-program'); showStepperStep(3); openTab(null,'training-planner','inner-tabs-step3');">VOIR TOUT MON PLANIFICATEUR</button>
+        </div>
+        <hr style="border-color: #444; margin: 30px 0;">
+        <div id="account-progression-status">
+          <h3>STATUT PREMIUM ET SUIVI</h3>
+          <p id="account-premium-status" style="font-weight: bold;">Statut : Non-Acheteur</p><button class="buy-button-pack" onclick="openPrimaryTab(event, 'primary-tab-program'); showStepperStep(2);">ACHETER UN PACK (ÉTAPE 2)</button>
+        </div>
+      </div>
+    </div>
+    <div id="primary-tab-tools" class="main-tab-content">
+      <div class="tabs" id="tools-inner-tabs">
+        <div class="tab-button" data-tab="tool-recap" onclick="openTab(event,'tool-recap','tools-inner-tabs')">🔗 MON RÉCAPITULATIF 🔒</div>
+        <div class="tab-button active" data-tab="tool-calc-fly" onclick="openTab(event,'tool-calc-fly','tools-inner-tabs')">➕ CALCUL À LA VOLÉE</div>
+      </div>
+      <div id="tool-recap" class="section tab-content">
+        <h2>🔬 OUTILS DE CALCUL (IMC & MACROS)</h2>
+        <p style="text-align:center; color:#ccc;">Retrouvez ici les résultats de vos calculs IMC et Macronutriments de l'Étape 1 pour référence rapide.</p>
+        <div id="tools-bmi-result" class="result" style="display: none;">
+          <p><strong>IMC (Indice de Masse Corporelle):</strong> <span id="tools-bmiValue" style="font-weight: bold;"></span> <span id="tools-bmiStatus" class="bmi-status"></span></p>
+          <p><strong>Répartition des Macronutriments :</strong></p>
+          <p>Prot: <span id="tools-protGrams" style="font-weight: bold;"></span> g | Lip: <span id="tools-fatGrams" style="font-weight: bold;"></span> g | Gluc: <span id="tools-carbGrams" style="font-weight: bold;"></span> g</p>
+          <p style="font-size: 0.9em; color: #ff0000; margin-top: 10px;">Objectif Calorique: <span id="tools-goalCals" style="font-weight: bold;"></span> kcal</p>
+        </div>
+        <div id="tools-no-data" style="text-align:center; padding: 15px; background: #333; border-radius: 4px;">Veuillez remplir et valider l'Étape 1 dans l'onglet Programme pour afficher vos résultats.</div>
+      </div>
+      <div id="tool-calc-fly" class="section tab-content active">
+        <h2>➕ CALCULER UN TDEE À LA VOLÉE</h2>
+        <p style="text-align:center; color:#ff0000; font-weight:bold;">ATTENTION : Les données saisies ici ne sont PAS enregistrées dans votre profil.</p><label for="cfgender">Sexe:</label><select id="cfgender">
+          <option value="male">Homme</option>
+          <option value="female">Femme</option>
+        </select><label for="cfage">Âge:</label><input type="number" id="cfage" min="15" max="100" placeholder="Âge" required><label for="cfweight">Poids (kg):</label><input type="number" id="cfweight" min="30" step="0.1" placeholder="Poids (kg)" required><label for="cfheight">Taille (cm):</label><input type="number" id="cfheight" min="100" max="250" placeholder="Taille (cm)" required><label for="cfactivity">Niveau d'Activité:</label><select id="cfactivity">
+          <option value="1.2">Sédentaire</option>
+          <option value="1.375">Légèrement Actif</option>
+          <option value="1.55">Modérément Actif</option>
+          <option value="1.725">Très Actif</option>
+          <option value="1.9">Extrêmement Actif</option>
+        </select><label for="cfgoal">Objectif Principal:</label><select id="cfgoal">
+          <option value="cut">Perte de poids (Sèche)</option>
+          <option value="mass">Prise de masse (Muscle)</option>
+          <option value="maintain">Maintien du poids</option>
+          <option value="performance">Performance / Force</option>
+        </select><button onclick="calculateFlyData()">CALCULER LES RÉSULTATS IMMÉDIATEMENT</button>
+        <div id="flyCalcResult" class="result" style="display: none;">
+          <p><strong>Résultats du Calcul Rapide :</strong></p>
+          <p>IMC : <span id="flybmiValue" style="font-weight: bold;"></span> <span id="flybmiStatus" class="bmi-status"></span></p>
+          <p style="font-weight: bold; color: #ff0000;">Objectif Calorique : <span id="flygoalCals"></span> kcal</p>
+          <div class="macro-detail">
+            <p style="font-weight: bold;">Macros pour l'Objectif :</p>
+            <p>Prot: <span id="flyprotGrams" style="font-weight: bold;"></span> g | Lip: <span id="flyfatGrams" style="font-weight: bold;"></span> g | Gluc: <span id="flycarbGrams" style="font-weight: bold;"></span> g</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="primary-tab-community" class="main-tab-content">
+      <div id="resources-section" class="section" style="margin-top: 0;">
+        <h2>🎓 FORMATION BANE WORKOUT - COURS EXPERTS</h2>
+        <div class="resource-grid" id="training-grid"></div>
+      </div>
+    </div>
+    <div id="primary-tab-contact" class="main-tab-content">
+      <div class="section">
+        <h2>📧 CONTACTER LE COACH</h2>
+        <p style="text-align: center;">Utilisez ce formulaire pour envoyer une question directe concernant votre programme ou l'application.</p><label for="contact-email">Votre Email (Réponse assurée sous 48h):</label><input type="email" id="contact-email" placeholder="Votre email pour la réponse" required><label for="contact-subject">Sujet de la Question:</label><input type="text" id="contact-subject" placeholder="Ex: Question sur l'exercice de squat"><label for="contact-message">Votre Message Détaillé:</label><textarea id="contact-message" rows="5" placeholder="Décrivez votre problème ou votre question ici..."></textarea><button onclick="sendContactEmail()">ENVOYER MA QUESTION AU COACH</button>
+        <p style="font-size: 0.8em; color: #888; text-align: center; margin-top: 15px;">Pour le suivi Premium Bane, veuillez utiliser le bouton d'envoi dédié dans l'onglet "Suivi de Progression" (Programme Étape 3).</p>
+      </div>
+    </div>
+    <div id="rating-section" class="section">
+      <h2>VOTRE AVIS COMPTE !</h2>
+      <p>Aidez-nous à améliorer Bane Workout en nous donnant une note :</p>
+      <div class="rating-system">
+        <div class="stars" id="star-rating" style="font-size: 2em; color: #555; text-align: center; cursor: pointer;"><span data-value="1">★</span><span data-value="2">★</span><span data-value="3">★</span><span data-value="4">★</span><span data-value="5">★</span></div>
+        <p style="font-size: 0.9em; color: #ccc; margin-top: 10px; text-align: center;" id="rating-message">(Cliquez sur une étoile pour noter)</p>
+      </div><button class="like-button" id="like-app-button" onclick="likeApp()">❤️ J'AIME CETTE APPLICATION</button>
+    </div>
+    <div id="support-section" class="section" style="margin-top: 0;">
+      <h2>SOUTENIR LE PROJET ❤️</h2>
+      <p style="text-align: center; color: #ccc;">Chaque don, quel que soit le montant, contribue directement au développement de nouvelles fonctionnalités, à la maintenance du projet et au soutien du coach. Merci !</p><button id="support-button" onclick="redirectToSupport()">SOUTENIR L'APPLICATION (FAIRE UN DON)</button>
+      <p style="text-align: center; font-size: .75em; color: #888; margin-top: 5px;">Votre don est libre et participe au développement de l'application et du projet.</p>
+    </div>
+    <div id="legal-mentions">
+      <h2>MENTIONS LÉGALES ET PROPRIÉTÉ INTELLECTUELLE</h2>
+      <p style="color: #ff0000; font-weight: bold;">APPLICATION PENSÉE, CONÇUE ET DÉVELOPPÉE PAR BASTIEN VERDU.</p>
+      <p><strong>Protection des Données (RGPD) :</strong> Les informations collectées sont destinées exclusivement à BaneWorkout et ne sont pas cédées à des tiers. Contact : <code>therealbane666@gmail.com</code>.</p>
+      <p><strong>Conditions Générales :</strong> En achetant un service (Programme/Pack), vous acceptez que les photos fournies pour le suivi (Packs Premium) sont confidentielles et utilisées uniquement dans le cadre strict de votre coaching privé.</p>
+      <p style="margin-top: 15px; font-weight: bold;">PROPRIÉTÉ INTELLECTUELLE ET ANTI-PLAGIAT :</p>
+      <p>L'intégralité du code source, de la logique de calcul, des designs, du nom et du concept BaneWorkout est la propriété intellectuelle exclusive de son créateur. Toute copie, reproduction, distribution ou usage commercial non autorisé du code ou du contenu (articles de formation) est strictement interdit et passible de poursuites.</p>
+    </div>
+  </div>
+  <div id="articleModal" class="modal">
+    <div class="modal-content"><span class="close-btn" onclick="closeArticleModal()">&times;</span>
+      <h2 id="article-title"></h2>
+      <div id="article-body" class="article-content"></div>
+      <div class="article-rating-system">
+        <p>Évaluez cette formation :</p>
+        <div class="stars" id="article-star-rating" style="font-size: 1.8em; color: #555; cursor: pointer;"><span data-value="1">★</span><span data-value="2">★</span><span data-value="3">★</span><span data-value="4">★</span><span data-value="5">★</span></div>
+        <p id="article-rating-message"></p>
+      </div>
+      <p class="signature">Formation rédigée et validée par Bastien Verdu.</p>
+    </div>
+  </div>
+  <div id="admin-secret-modal" class="modal">
+    <div class="modal-content"><span class="close-btn" onclick="closeAdminSecretModal()">&times;</span>
+      <h2>👁️ PROGRAMMES ET DIÈTES SECRETS (ADMIN)</h2>
+      <p style="color: #aaa;">Voici la liste de TOUS les programmes et diètes générés par l'application :</p>
+      <div id="admin-programs-list"></div>
+    </div>
+  </div>
+  <div id="admin-toggle" onclick="toggleAdminModal()">⚙️</div>
+  <div id="admin-access-modal">
+    <h4>🗝️ ACCÈS ADMINISTRATEUR</h4><input type="password" id="adminCode" placeholder="Code secret (confidentiel)"><button onclick="checkAdminAccess()">ACCÉDER</button>
+  </div>
+  <script>
+    const OWNEREMAILHASH = "7468657265616c62616e6536363640676d61696c2e636f6d",
+      ADMINCODEHASH = "42414e45363636444556";
+    let allUserData = null,
+      isStep1Validated = !1,
+      isPurchased = !1,
+      isPremium = !1,
+      sessionHistory = [],
+      progressionHistory = [],
+      totalLikes = 0,
+      canLike = !0,
+      purchasedTrainings = [];
+
+    function hexToString(t) {
+      let e = '';
+      for (let n = 0; n < t.length; n += 2) e += String.fromCharCode(parseInt(t.substring(n, n + 2), 16));
+      return e
+    }
+
+    function updateAccountTab() {
+      const t = document.getElementById('account-email'),
+        e = document.getElementById('account-gender-age'),
+        n = document.getElementById('account-weight-height'),
+        o = document.getElementById('account-activity'),
+        a = document.getElementById('account-material'),
+        r = document.getElementById('account-goal'),
+        l = document.getElementById('account-goalCals'),
+        i = document.getElementById('account-session-summary'),
+        s = document.getElementById('account-premium-status');
+      if (allUserData) {
+        t.textContent = allUserData.userEmail;
+        const c = allUserData.gender === 'male' ? 'Homme' : 'Femme',
+          u = allUserData.activityValue === '1.2' ? 'Sédentaire' : allUserData.activityValue === '1.375' ? 'Légèrement Actif' : allUserData.activityValue === '1.55' ? 'Modérément Actif' : allUserData.activityValue === '1.725' ? 'Très Actif' : 'Extrêmement Actif',
+          d = allUserData.material === 'yes' ? 'Oui (Complet)' : 'Non (Poids du Corps)',
+          m = {
+            cut: 'Perte de Poids (Sèche) 📉',
+            mass: 'Prise de Masse (Muscle) 📈',
+            maintain: 'Maintien du Poids ⚖️',
+            performance: 'Performance / Force 💪'
+          };
+        e.textContent = `${c}, ${allUserData.age} ans`, n.textContent = `${allUserData.weight} kg / ${allUserData.height} cm`, o.textContent = u, a.textContent = d, r.textContent = m[allUserData.goal] || allUserData.goal, l.textContent = allUserData.goalCals
+      } else t.textContent = e.textContent = n.textContent = o.textContent = a.textContent = r.textContent = l.textContent = 'Veuillez remplir l\'Étape 1.', document.getElementById('account-goalCals').textContent = 'N/A';
+      sessionHistory.length > 0 ? i.innerHTML = `${sessionHistory.length} séance(s) enregistrée(s). Dernière séance : ${sessionHistory[0].muscle} (${sessionHistory[0].date.split('-')[2]}/${sessionHistory[0].date.split('-')[1]})` : i.textContent = 'Aucune séance enregistrée.';
+      isPremium ? s.textContent = 'Statut : Premium Bane (Suivi Pro déverrouillé)' : isPurchased ? s.textContent = 'Statut : Bane One (Planificateur déverrouillé)' : s.textContent = 'Statut : Non-Acheteur';
+      renderUserProgram()
+    }
+
+    function renderUserProgram() {
+      const t = document.getElementById('user-program-content'),
+        e = document.getElementById('program-access-message');
+      if (isPurchased && allUserData) {
+        const n = generateProgramDetails(allUserData.goal, allUserData.material);
+        t.innerHTML = n, e.style.display = 'none'
+      } else t.innerHTML = '', e.style.display = 'block'
+    }
+
+    function initializeApp() {
+      try {
+        loadUserData(), loadHistories();
+        const t = new Date().toISOString().substring(0, 10);
+        document.getElementById('session-date') && (document.getElementById('session-date').value = t), document.getElementById('prog-date') && (document.getElementById('prog-date').value = t);
+        updateTabNavigationStatus();
+        let e = 1;
+        isPurchased ? e = 3 : isStep1Validated ? e = 2 : e = 1, showStepperStep(e);
+        if (isPurchased) {
+          unlockPlanner(!1);
+          isPremium ? unlockPremiumTracker(!1) : lockPremiumTracker(!1)
+        } else if (isStep1Validated) updateRecaps();
+        updateAccountTab(), renderTrainingGrid(), setupStarRatingListeners();
+        document.getElementById('placeholder-link').addEventListener('click', () => openPlaceholderLink())
+      } catch (t) {
+        console.error("Erreur lors de l'initialisation de l'application :", t)
+      }
+    }
+
+    function setupStarRatingListeners() {
+      const t = document.getElementById('star-rating');
+      t && t.querySelectorAll('span').forEach(e => {
+        e.addEventListener('click', n => {
+          const o = n.target.getAttribute('data-value');
+          t.querySelectorAll('span').forEach(t => {
+            t.style.color = t.getAttribute('data-value') <= o ? '#FFC107' : '#555'
+          }), document.getElementById('rating-message').textContent = `Merci pour votre note de ${o} étoiles !`
+        }), e.addEventListener('mouseover', n => {
+          const o = n.target.getAttribute('data-value');
+          t.querySelectorAll('span').forEach(t => {
+            t.style.color = t.getAttribute('data-value') <= o ? '#FFC107' : '#999'
+          })
+        }), e.addEventListener('mouseout', () => {
+          let e = t.querySelector('span[style*="color: rgb(255, 193, 7)"]'),
+            n = e ? e.getAttribute('data-value') : 0;
+          t.querySelectorAll('span').forEach(t => {
+            t.style.color = t.getAttribute('data-value') <= n ? '#FFC107' : '#555'
+          })
+        })
+      })
+    }
+
+    function openPlaceholderLink() {
+      alert("Ceci est un lien en attente !")
+    }
+
+    function updateTabNavigationStatus() {
+      const t = document.querySelector('.main-tab-button[onclick*="primary-tab-account"]'),
+        e = document.querySelector('.tab-button[data-tab="tool-recap"]');
+      if (t) t.innerHTML = isPurchased ? '👤 MON COMPTE' : '👤 MON COMPTE 🔒';
+      if (e) e.innerHTML = isPurchased ? '🔗 MON RÉCAPITULATIF' : '🔗 MON RÉCAPITULATIF 🔒'
+    }
+
+    function updateRecaps() {
+      document.getElementById('recap-goalCals').textContent = allUserData.goalCals, document.getElementById('recap-weight').textContent = allUserData.weight
+    }
+
+    function loadUserData() {
+      isPurchased = localStorage.getItem('isBaneOnePurchased') === 'true' || localStorage.getItem('isPremiumUser') === 'true', isPremium = localStorage.getItem('isPremiumUser') === 'true';
+      const t = localStorage.getItem('baneWorkoutUserData');
+      if (t) try {
+        allUserData = JSON.parse(t), isStep1Validated = !0
+      } catch (t) {
+        console.error("Erreur de parsing des données utilisateur. Réinitialisation des données.", t), localStorage.removeItem('baneWorkoutUserData'), allUserData = null, isStep1Validated = !1, document.getElementById('userEmail').value = '';
+        return
+      }
+      if (allUserData) {
+        document.getElementById('userEmail').value = allUserData.userEmail, document.getElementById('gender').value = allUserData.gender, document.getElementById('age').value = allUserData.age, document.getElementById('weight').value = allUserData.weight, document.getElementById('height').value = allUserData.height, document.getElementById('activity').value = allUserData.activityValue, document.getElementById('goal').value = allUserData.goal, document.getElementById('material').value = allUserData.material, updateToolsTab(allUserData);
+        if (allUserData.goalCals) {
+          document.getElementById('validate-step1-btn').textContent = 'RE-CALCULER / METTRE À JOUR MES INFORMATIONS', document.getElementById('bmiValue').textContent = allUserData.bmi, document.getElementById('maintenanceCals').textContent = allUserData.maintenanceCals, document.getElementById('goalCals').textContent = allUserData.goalCals, document.getElementById('protGrams').textContent = allUserData.protGrams, document.getElementById('fatGrams').textContent = allUserData.fatGrams, document.getElementById('carbGrams').textContent = allUserData.carbGrams, updateBmiStatus(parseFloat(allUserData.bmi), allUserData.goal), document.getElementById('tdeeResult').style.display = 'block'
+        }
+      }
+    }
+
+    function loadHistories() {
+      try {
+        const t = localStorage.getItem('baneWorkoutSessionHistory');
+        t && (sessionHistory = JSON.parse(t)), renderSessionHistory(!1)
+      } catch (t) {
+        console.error("Erreur de chargement de l'historique des sessions.", t), sessionHistory = []
+      }
+      try {
+        const t = localStorage.getItem('baneWorkoutProgressionHistory');
+        t && (progressionHistory = JSON.parse(t)), renderProgressionHistory()
+      } catch (t) {
+        console.error("Erreur de chargement de l'historique de progression.", t), progressionHistory = []
+      }
+      try {
+        totalLikes = parseInt(localStorage.getItem('baneWorkoutLikes') || '0'), canLike = localStorage.getItem('baneWorkoutCanLike') !== 'false'
+      } catch (t) {
+        console.error("Erreur de chargement des likes.", t)
+      }
+      try {
+        const t = localStorage.getItem('baneWorkoutPurchasedTrainings');
+        t && (purchasedTrainings = JSON.parse(t))
+      } catch (t) {
+        console.error("Erreur de chargement des formations achetées.", t)
+      }
+    }
+
+    function calculateBMR(t, e, n, o) {
+      return t === 'male' ? 10 * o + 6.25 * n - 5 * e + 5 : 10 * o + 6.25 * n - 5 * e - 161
+    }
+
+    function calculateTDEE(t, e) {
+      return Math.round(t * e)
+    }
+
+    function calculateBMI(t, e) {
+      return (t / ((e / 100) ** 2)).toFixed(2)
+    }
+
+    function getMacros(t, e, n) {
+      let o, a, r;
+      t === 'cut' ? (o = n - 500, a = 2.2, r = .9) : t === 'mass' ? (o = n + 300, a = 1.8, r = .8) : (o = n, a = 1.5, r = 1);
+      const l = Math.round(e * a),
+        i = Math.round(e * r),
+        s = Math.round((o - l * 4 - i * 9) / 4);
+      return {
+        goalCals: o,
+        protGrams: l,
+        fatGrams: i,
+        carbGrams: s
+      }
+    }
+
+    function updateBmiStatus(t, e, n, o) {
+      let a = '',
+        r = '';
+      t < 18.5 ? (a = 'Maigreur', r = 'status-maigreur') : t >= 18.5 && t < 25 ? (a = 'Normal', r = 'status-normal') : t >= 25 && t < 30 ? (a = 'Surpoids', r = 'status-surpoids') : (a = 'Obésité', r = 'status-obesite');
+      let l = '';
+      e === 'cut' ? l = "Conseil Sèche : Visez un apport en Protéines d'au moins 2.2g/kg pour protéger la masse musculaire." : e === 'mass' ? l = "Conseil Masse : Assurez un surplus calorique avec des Glucides de qualité pour des séances intenses." : l = "Conseil Maintien : Équilibrez vos apports pour une énergie constante et une bonne récupération.", document.getElementById(`${n}bmiStatus`).textContent = a, document.getElementById(`${n}bmiStatus`).className = `bmi-status ${r}`, o && (document.getElementById(`${n}macroTip`).textContent = l)
+    }
+
+    function updateToolsTab(t) {
+      const e = document.getElementById('tools-bmi-result'),
+        n = document.getElementById('tools-no-data');
+      if (t && t.goalCals) {
+        document.getElementById('tools-bmiValue').textContent = t.bmi, document.getElementById('tools-protGrams').textContent = t.protGrams, document.getElementById('tools-fatGrams').textContent = t.fatGrams, document.getElementById('tools-carbGrams').textContent = t.carbGrams, document.getElementById('tools-goalCals').textContent = t.goalCals, updateBmiStatus(parseFloat(t.bmi), t.goal, 'tools-'), e.style.display = 'block', n.style.display = 'none'
+      } else e.style.display = 'none', n.style.display = 'block'
+    }
+
+    function validateStep1() {
+      const t = document.getElementById('userEmail').value.trim(),
+        e = document.getElementById('gender').value,
+        n = parseInt(document.getElementById('age').value),
+        o = parseFloat(document.getElementById('weight').value),
+        a = parseInt(document.getElementById('height').value),
+        r = document.getElementById('activity'),
+        l = parseFloat(r.value),
+        i = document.getElementById('goal').value,
+        s = document.getElementById('material').value;
+      if (!t || !n || !o || !a || !l || n < 15 || o < 30 || a < 100 || !t.includes('@') || !t.includes('.')) return alert("Attention : Veuillez remplir tous les champs correctement (Email valide, Âge min. 15 ans, Poids min. 30 kg)."), !1;
+      const c = calculateBMR(e, n, o, a),
+        u = calculateTDEE(c, l),
+        d = calculateBMI(o, a),
+        m = getMacros(i, o, u);
+      return allUserData = {
+        userEmail: t,
+        gender: e,
+        age: n,
+        weight: o,
+        height: a,
+        activityValue: r.value,
+        goal: i,
+        material: s,
+        bmr: c,
+        maintenanceCals: u,
+        goalCals: m.goalCals,
+        bmi: d,
+        protGrams: m.protGrams,
+        fatGrams: m.fatGrams,
+        carbGrams: m.carbGrams
+      }, localStorage.setItem('baneWorkoutUserData', JSON.stringify(allUserData)), isStep1Validated = !0, updateBmiStatus(parseFloat(d), i, '', !0), document.getElementById('bmiValue').textContent = d, document.getElementById('maintenanceCals').textContent = u, document.getElementById('goalCals').textContent = m.goalCals, document.getElementById('protGrams').textContent = m.protGrams, document.getElementById('fatGrams').textContent = m.fatGrams, document.getElementById('carbGrams').textContent = m.carbGrams, document.getElementById('tdeeResult').style.display = 'block', document.getElementById('validate-step1-btn').textContent = 'RE-CALCULER / METTRE À JOUR MES INFORMATIONS', updateRecaps(), updateToolsTab(allUserData), updateAccountTab(), document.querySelector('.container').scrollIntoView({
+        behavior: 'smooth'
+      }), showStepperStep(2), !0
+    }
+
+    function calculateFlyData() {
+      const t = document.getElementById('cfgender').value,
+        e = parseInt(document.getElementById('cfage').value),
+        n = parseFloat(document.getElementById('cfweight').value),
+        o = parseInt(document.getElementById('cfheight').value),
+        a = parseFloat(document.getElementById('cfactivity').value),
+        r = document.getElementById('cfgoal').value,
+        l = document.getElementById('flyCalcResult');
+      if (!e || !n || !o || !a || e < 15 || n < 30 || o < 100) return alert("Veuillez remplir correctement tous les champs pour le calcul à la volée."), !1;
+      const i = calculateBMR(t, e, n, o),
+        s = calculateTDEE(i, a),
+        c = calculateBMI(n, o),
+        u = getMacros(r, n, s);
+      l.style.display = 'block', document.getElementById('flybmiValue').textContent = c, updateBmiStatus(parseFloat(c), r, 'fly');
+      document.getElementById('flygoalCals').textContent = u.goalCals, document.getElementById('flyprotGrams').textContent = u.protGrams, document.getElementById('flyfatGrams').textContent = u.fatGrams, document.getElementById('flycarbGrams').textContent = u.carbGrams;
+      document.getElementById('tool-calc-fly').scrollIntoView({
+        behavior: 'smooth'
+      })
+    }
+
+    function handlePackPurchase(t, e) {
+      if (!allUserData || !allUserData.userEmail) return alert("Veuillez d'abord remplir et valider l'Étape 1 avant d'acheter."), showStepperStep(1), !1;
+      redirectToPayPal(t, e);
+      if (t === 'Premium Bane') {
+        localStorage.setItem('isPremiumUser', 'true'), localStorage.setItem('isBaneOnePurchased', 'true'), isPurchased = !0, isPremium = !0;
+        unlockPlanner(!0), unlockPremiumTracker(!0)
+      } else if (t === 'Bane One') {
+        localStorage.setItem('isBaneOnePurchased', 'true'), localStorage.setItem('isPremiumUser', 'false'), isPurchased = !0, isPremium = !1;
+        unlockPlanner(!0), lockPremiumTracker(!0)
+      }
+      updateTabNavigationStatus();
+      return updateAccountTab(), sendRecapEmail(t, e), !0
+    }
+
+    function sendRecapEmail(t, e) {
+      const n = allUserData.userEmail,
+        o = encodeURIComponent(`Nouvelle commande BANE WORKOUT - ${t} (${e.toFixed(2)} EUR) - Récapitulatif`),
+        a = `Bonjour,\n\nJ'ai effectué une commande via l'application BANE WORKOUT. Voici le récapitulatif de ma commande :\n\n- Article acheté : ${t}\n- Prix : ${e.toFixed(2)} EUR\n- Email Client : ${n}\n\n RÉCAPITULATIF DE MES DONNÉES \n- Objectif : ${allUserData.goal}\n- Matériel : ${allUserData.material==='yes'?'Salle/Équipement':'Poids du corps'}\n- TDEE Cible : ${allUserData.goalCals} kcal (P:${allUserData.protGrams}g / L:${allUserData.fatGrams}g / G:${allUserData.carbGrams}g)\n\nJe clique sur 'Envoyer' pour vous transmettre ce récapitulatif.\n\nCordialement.\n`;
+      const r = encodeURIComponent(a),
+        l = `mailto:${hexToString(OWNEREMAILHASH)}?subject=${o}&body=${r}`;
+      window.open(l, '_blank'), alert(`Un récapitulatif de votre commande (${t}) s'ouvre dans votre messagerie. Veuillez cliquer sur 'Envoyer'. Cliquez ensuite sur 'OK' pour être redirigé vers PayPal pour le paiement.`)
+    }
+
+    function redirectToPayPal(t, e) {
+      const n = document.createElement('form');
+      n.method = 'post', n.action = 'https://www.paypal.com/cgi-bin/webscr', n.target = '_blank';
+      const o = {
+        cmd: '_xclick',
+        business: hexToString(OWNEREMAILHASH),
+        item_name: t,
+        amount: e.toFixed(2),
+        currency_code: 'EUR',
+        custom: `${allUserData?allUserData.userEmail:'N/A'}-${Date.now()}`
+      };
+      for (const t in o) {
+        const e = document.createElement('input');
+        e.type = 'hidden', e.name = t, e.value = o[t], n.appendChild(e)
+      }
+      document.body.appendChild(n), n.submit(), document.body.removeChild(n)
+    }
+
+    function unlockPlanner(t = !0) {
+      isPurchased = !0;
+      const e = document.getElementById('premium-planner-message');
+      e && (e.style.display = 'block', e.style.backgroundColor = '#008800', e.textContent = '✅ ACCÈS AU PLANIFICATEUR DÉVERROUILLÉ !'), document.querySelector('.tab-button[data-tab="progression-tracker"]').innerHTML = '📊 SUIVI DE PROGRESSION PREMIUM 🔒', t && (alert("Accès au Planificateur de Séance déverrouillé ! Votre Étape 3 est maintenant disponible."), showStepperStep(3), openTab(null, 'training-planner', 'inner-tabs-step3'))
+    }
+
+    function unlockPremiumTracker(t = !0) {
+      isPremium = !0;
+      const e = document.getElementById('premium-tracker-message'),
+        n = document.getElementById('progression-form-section');
+      e && (e.style.display = 'none'), n && (n.style.display = 'block'), document.querySelector('.tab-button[data-tab="progression-tracker"]').innerHTML = '📊 SUIVI DE PROGRESSION', t && alert("Accès Premium Bane aux outils de Suivi de Progression déverrouillé !"), updateAccountTab()
+    }
+
+    function lockPremiumTracker(t = !0) {
+      isPremium = !1;
+      const e = document.getElementById('premium-tracker-message'),
+        n = document.getElementById('progression-form-section');
+      e && (e.style.display = 'block', e.style.backgroundColor = '#c00', e.textContent = '⚠️ FONCTIONNALITÉ RÉSERVÉE AU PACK PREMIUM BANE. ACHETEZ-LE POUR DÉVERROUILLER LE SUIVI PRO !'), n && (n.style.display = 'none'), document.querySelector('.tab-button[data-tab="progression-tracker"]').innerHTML = '📊 SUIVI DE PROGRESSION PREMIUM 🔒'
+    }
+
+    function checkAdminAccess() {
+      const t = document.getElementById('adminCode').value.trim().toUpperCase();
+      if (t === hexToString(ADMINCODEHASH)) {
+        document.getElementById('admin-access-modal').style.display = 'none', document.getElementById('admin-secret-modal').style.display = 'block', generateAllPrograms(), alert("Accès Administrateur aux Programmes Secrets Réussi !")
+      } else {
+        alert("Code administrateur incorrect. Veuillez vous référer à votre code secret."), document.getElementById('adminCode').value = '', document.getElementById('adminCode').focus()
+      }
+    }
+
+    function toggleAdminModal() {
+      const t = document.getElementById('admin-access-modal');
+      t.style.display = t.style.display === 'block' ? 'none' : 'block', document.getElementById('adminCode').focus()
+    }
+
+    function closeAdminSecretModal() {
+      document.getElementById('admin-secret-modal').style.display = 'none'
+    }
+
+    function generateProgramDetails(t, e) {
+      const n = {
+          cut: 'SÈCHE 📉 (Déficit -500 kcal)',
+          mass: 'MASSE 📈 (Surplus +300 kcal)',
+          maintain: 'MAINTIEN ⚖️ (TDEE)',
+          performance: 'PERFORMANCE 💪 (Surplus Léger +100 kcal)'
+        },
+        o = n[t] || t,
+        a = e === 'yes' ? 'Équipement Complet (Salle ou Domicile)' : 'Poids du Corps (Minimum/Sans matériel)';
+      let r, l, i = 'Niveau Adapté à votre activité sélectionnée';
+      if (t === 'cut') {
+        r = 'Programme Sport ${a} : 4-5 jours/semaine. Focus sur la haute densité (circuits/super-séries) pour augmenter le brûlage calorique tout en maintenant la force. Séances courtes et intenses.', l = 'Diète ${o} : Protéines très élevées (2.2g/kg). Lipides modérés (0.8g/kg). Glucides cyclés et concentrés autour de l\'entraînement.'
+      } else if (t === 'mass') {
+        r = 'Programme Sport ${a} : 3-4 jours/semaine. Mouvements composés, Surcharge Progressive (5x5 ou 8-12 reps). Repos longs (2-3 min). Objectif : Stress mécanique maximum.', l = 'Diète ${o} : Protéines (1.8g/kg). Glucides élevés (riz, avoine, pâtes complètes) pour le carburant des séances. Lipides sains essentiels (20-25% du total).'
+      } else if (t === 'maintain') {
+        r = 'Programme Sport ${a} : 3 jours Full Body ou 4 jours Split classique. Équilibre entre force et volume. Routine constante pour maintenir la composition corporelle.', l = 'Diète ${o} : Macronutriments équilibrés (Prot 1.5g/kg). Flexibilité calorique. Concentrez-vous sur la qualité des aliments pour l\'énergie.'
+      } else if (t === 'performance') {
+        r = 'Programme Sport ${a} : 5 jours/semaine, fort accent sur les mouvements fondamentaux (Squat, Soulevé, Développé). Cycles de force pure (3-5 reps). Préparation nerveuse.', l = 'Diète ${o} : Protéines (2.0g/kg). Glucides complexes en abondance pour soutenir le système nerveux central et l\'énergie brute.'
+      }
+      return `<div class="program-card"><h4 style="color:#ff0000;">OBJECTIF : ${o}</h4><p><strong>Matériel :</strong> ${a}</p><p><strong>Niveau :</strong> ${i}</p><p style="font-size: 0.9em; margin-top: 10px;">${r}</p><p style="font-size: 0.9em; font-weight: bold; color: #FFD700;">${l}</p></div>`
+    }
+
+    function generateAllPrograms() {
+      const t = ['cut', 'mass', 'maintain', 'performance'],
+        e = ['yes', 'no'],
+        n = document.getElementById('admin-programs-list');
+      n.innerHTML = '';
+      t.forEach(t => {
+        e.forEach(e => {
+          n.innerHTML += generateProgramDetails(t, e)
+        })
+      })
+    }
+
+    function openPrimaryTab(t, e) {
+      const n = ['primary-tab-community', 'primary-tab-contact'],
+        o = document.getElementById('tools-inner-tabs').querySelector('.tab-button[data-tab="tool-calc-fly"]');
+      if (!n.includes(e) && e !== 'primary-tab-program' && !isPurchased) {
+        let a = "Veuillez remplir l'Étape 1 et acheter un Pack (Étape 2) dans l'onglet Programme pour déverrouiller l'application complète.";
+        if (!isStep1Validated) a = "Veuillez remplir l'Étape 1 pour déverrouiller le reste de l'application.";
+        return alert(`⚠️ Accès Restreint : ${a}`), openPrimaryTab(null, 'primary-tab-program'), showStepperStep(isStep1Validated ? 2 : 1), !1
+      }
+      document.querySelectorAll(".main-tab-content").forEach(t => t.style.display = "none"), document.querySelectorAll("#primary-tabs-nav .main-tab-button").forEach(t => t.classList.remove("active"));
+      const a = document.getElementById(e);
+      a && (a.style.display = "block");
+      if (e === 'primary-tab-tools' && isPurchased) {
+        openTab(null, 'tool-recap', 'tools-inner-tabs')
+      } else if (e === 'primary-tab-tools' && !isPurchased) {
+        o.classList.add('active'), document.getElementById('tool-calc-fly').classList.add('active'), document.getElementById('tool-recap').classList.remove('active'), document.getElementById('tool-recap').parentElement.querySelector('[data-tab="tool-recap"]').classList.remove('active')
+      }
+      if (e === 'primary-tab-program') {
+        if (isPurchased) showStepperStep(3);
+        else if (isStep1Validated) showStepperStep(2);
+        else showStepperStep(1)
+      }
+      if (e === 'primary-tab-community') renderTrainingGrid();
+      t && t.currentTarget.classList.add("active")
+    }
+
+    function showStepperStep(t) {
+      document.getElementById('stepper-step-1').style.display = 'none', document.getElementById('stepper-step-2').style.display = 'none', document.getElementById('stepper-step-3').style.display = 'none';
+      const e = document.getElementById(`stepper-step-${t}`);
+      e && (e.style.display = 'block', t > 1 && document.querySelector('.container').scrollIntoView({
+        behavior: 'smooth'
+      }), t === 3 && isPremium && document.getElementById('progression-form-section').style.display === 'block' && renderProgressionHistory())
+    }
+
+    function openTab(t, e, n) {
+      if (!n) return;
+      const o = document.getElementById(n);
+      if (!o) return;
+      const a = o.parentElement.id,
+        r = document.getElementById(a);
+      r.querySelectorAll(".tab-content").forEach(t => t.style.display = "none"), o.querySelectorAll(".tab-button").forEach(t => t.classList.remove("active"));
+      const l = document.getElementById(e);
+      if (l) {
+        if (e === 'progression-tracker' && !isPremium) {
+          return alert("⚠️ Le Suivi de Progression est réservé au Pack Premium Bane ! Veuillez l'acheter pour déverrouiller cette fonctionnalité."), !1
+        }
+        if (e !== 'tool-calc-fly' && a === 'tools-inner-tabs' && !isPurchased) {
+          return alert("⚠️ Le Récapitulatif est réservé aux acheteurs des Packs (Étape 2) !"), openTab(null, 'tool-calc-fly', 'tools-inner-tabs'), !1
+        }
+        l.style.display = "block"
+      }
+      if (t && t.currentTarget) t.currentTarget.classList.add("active");
+      else {
+        const t = o.querySelector(`.tab-button[data-tab="${e}"]`);
+        t && t.classList.add("active")
+      }
+    }
+
+    function saveSessionHistory() {
+      try {
+        localStorage.setItem('baneWorkoutSessionHistory', JSON.stringify(sessionHistory))
+      } catch (t) {
+        console.error("Impossible de sauvegarder l'historique des sessions.", t)
+      }
+    }
+
+    function logSession() {
+      if (!isPurchased) return alert("Cette fonction est réservée aux acheteurs (Pack Bane One ou Premium Bane)."), !1;
+      const t = document.getElementById('session-date').value,
+        e = document.getElementById('session-muscle').value.trim(),
+        n = document.getElementById('session-summary').value.trim(),
+        o = document.getElementById('session-rating').value,
+        a = document.getElementById('session-mood').value;
+      if (!t || !e || !n) return alert("Veuillez remplir la date, le groupe musculaire et les détails de la séance."), !1;
+      if (parseInt(o) < 1 || parseInt(o) > 5) return alert("La note de la séance doit être comprise entre 1 et 5."), !1;
+      const r = {
+        date: t,
+        muscle: e,
+        summary: n,
+        rating: parseInt(o),
+        mood: a,
+        timestamp: Date.now()
+      };
+      return sessionHistory.unshift(r), sessionHistory = sessionHistory.slice(0, 20), saveSessionHistory(), renderSessionHistory(!1), alert(`Séance du ${t} (${e}) enregistrée avec succès ! Humeur: ${a}.`), document.getElementById('session-muscle').value = '', document.getElementById('session-summary').value = '', document.getElementById('session-rating').value = 4, document.getElementById('session-mood').value = 'Bon', document.getElementById('session-date').value = new Date().toISOString().substring(0, 10), updateAccountTab(), !0
+    }
+
+    function renderSessionHistory(t = !1) {
+      const e = document.getElementById('history-body'),
+        n = document.getElementById('view-full-history');
+      if (!e || !n) return;
+      e.innerHTML = '';
+      const o = t ? sessionHistory.length : Math.min(10, sessionHistory.length),
+        a = sessionHistory.slice(0, o);
+      sessionHistory.length > 10 ? (n.style.display = 'block', n.textContent = t ? 'MASQUER L\'HISTORIQUE COMPLET' : `AFFICHER L'HISTORIQUE COMPLET (${sessionHistory.length} sessions)`, n.onclick = () => renderSessionHistory(!t)) : n.style.display = 'none', a.length === 0 ? e.innerHTML = '<tr><td colspan="4" style="padding: 15px; text-align: center; color: #aaa;">Aucune séance enregistrée pour le moment.</td></tr>' : a.forEach(t => {
+        const n = '★'.repeat(t.rating) + '☆'.repeat(5 - t.rating),
+          o = t.date.split('-'),
+          a = `${o[2]}/${o[1]}`,
+          r = e.insertRow();
+        r.innerHTML = `<td style="padding: 10px; white-space: nowrap;">${a}</td><td style="padding: 10px; font-weight: bold; color: #ff0000; white-space: nowrap;">${t.muscle}</td><td style="padding: 10px; font-size: 0.9em; color: #ccc;">${t.summary} <br/> <em style="color: #aaa;">(${t.mood})</em></td><td style="padding: 10px; color: gold; white-space: nowrap;">${n}</td>`
+      })
+    }
+
+    function saveProgressionHistory() {
+      try {
+        localStorage.setItem('baneWorkoutProgressionHistory', JSON.stringify(progressionHistory))
+      } catch (t) {
+        console.error("Impossible de sauvegarder l'historique de progression.", t)
+      }
+    }
+
+    function logProgression() {
+      if (!isPremium) return alert("Cette fonction est uniquement disponible pour les utilisateurs Premium Bane."), !1;
+      const t = document.getElementById('prog-date').value,
+        e = parseFloat(document.getElementById('prog-weight').value),
+        n = parseFloat(document.getElementById('prog-waist').value) || 0,
+        o = parseFloat(document.getElementById('prog-chest').value) || 0,
+        a = parseFloat(document.getElementById('prog-arms').value) || 0,
+        r = document.getElementById('prog-notes').value.trim();
+      if (!t || !e) return alert("Veuillez remplir au minimum la date et le poids."), !1;
+      const l = {
+        date: t,
+        weight: e,
+        waist: n,
+        chest: o,
+        arms: a,
+        notes: r,
+        timestamp: Date.now()
+      };
+      progressionHistory.unshift(l), saveProgressionHistory(), renderProgressionHistory(), alert(`Progression du ${t} enregistrée. Poids: ${e} kg.`);
+      document.getElementById('prog-notes').value = ''
+    }
+
+    function renderProgressionHistory() {
+      const t = document.getElementById('progression-body');
+      if (!t) return;
+      t.innerHTML = '';
+      if (progressionHistory.length === 0) return t.innerHTML = '<tr><td colspan="4" style="padding: 15px; text-align: center; color: #aaa;">Aucune mesure enregistrée.</td></tr>', !1;
+      progressionHistory.forEach(e => {
+        const n = e.date.split('-'),
+          o = `${n[2]}/${n[1]}/${n[0].substring(2)}`,
+          a = t.insertRow();
+        a.innerHTML = `<td style="padding: 10px;">${o}</td><td style="padding: 10px; font-weight: bold; color: #ff0000;">${e.weight?`${e.weight} kg`:''}</td><td style="padding: 10px;">${e.waist?`${e.waist} cm`:''}</td><td style="padding: 10px;">${e.chest?`${e.chest} cm`:''}</td><td style="padding: 10px;">${e.arms?`${e.arms} cm`:''}</td>`
+      })
+    }
+
+    function sendProgressionEmail() {
+      if (!isPremium) return alert("Cette fonction est uniquement disponible pour les utilisateurs Premium Bane."), !1;
+      if (!allUserData || !allUserData.userEmail) return alert("Vos données d'utilisateur (Étape 1) ne sont pas complètes."), !1;
+      const t = allUserData.userEmail,
+        e = encodeURIComponent(`[PREMIUM BANE SUIVI] Progression Hebdomadaire de ${t}`);
+      let n = `Bonjour Bastien,\n\nVoici le récapitulatif de ma progression et de mes mensurations :\n\n DONNÉES DE L'UTILISATEUR \n- Email Client : ${t}\n- Objectif : ${allUserData.goal}\n- TDEE Cible : ${allUserData.goalCals} kcal\n\n HISTORIQUE DE PROGRESSION \n${progressionHistory.map(t=>`\n--- Mesure du ${t.date.split('-')[2]}/${t.date.split('-')[1]}/${t.date.split('-')[0].substring(2)} ---\nPoids : ${t.weight} kg\nTaille : ${t.waist?t.waist+' cm':'-'}\nPoitrine : ${t.chest?t.chest+' cm':'-'}\nBras : ${t.arms?t.arms+' cm':'-'}\nNotes : ${t.notes||'N/A'}`).join('\n')}\n\n HISTORIQUE DES SÉANCES (RÉSUMÉ) \n${sessionHistory.slice(0,5).map(t=>`\n[${t.date.split('-')[2]}/${t.date.split('-')[1]}] Séance ${t.muscle} (${t.rating}/5) - Humeur: ${t.mood}.`).join('\n')}\n\nCordialement.\n`;
+      const o = encodeURIComponent(n),
+        a = `mailto:${hexToString(OWNEREMAILHASH)}?subject=${e}&body=${o}`;
+      window.open(a, '_blank'), alert("Votre courriel de Suivi de Progression s'ouvre. N'oubliez pas de joindre vos photos de suivi si besoin et de cliquer sur 'Envoyer'.")
+    }
+
+    function sendContactEmail() {
+      const t = document.getElementById('contact-email').value.trim(),
+        e = document.getElementById('contact-subject').value.trim(),
+        n = document.getElementById('contact-message').value.trim();
+      if (!t || !e || !n) return alert("Veuillez remplir votre courriel, le sujet et le corps du message."), !1;
+      if (!t.includes('@') || !t.includes('.')) return alert("Veuriel entrer une adresse courriel valide."), !1;
+      const o = encodeURIComponent(`[QUESTION BANE WORKOUT] ${e}`),
+        a = encodeURIComponent(`Courriel du Client : ${t}\n\nMessage :\n${n}\n\n`);
+      const r = `mailto:${hexToString(OWNEREMAILHASH)}?subject=${o}&body=${a}`;
+      window.open(r, '_blank'), alert("Votre courriel de question s'ouvre dans votre messagerie. Veuillez cliquer sur 'Envoyer'.")
+    }
+
+    function redirectToSupport() {
+      const t = document.createElement('form');
+      t.method = 'post', t.action = 'https://www.paypal.com/cgi-bin/webscr', t.target = '_blank';
+      const e = {
+        cmd: '_donations',
+        business: hexToString(OWNEREMAILHASH),
+        item_name: 'Soutien au projet Bane Workout',
+        currency_code: 'EUR'
+      };
+      for (const n in e) {
+        const o = document.createElement('input');
+        o.type = 'hidden', o.name = n, o.value = e[n], t.appendChild(o)
+      }
+      document.body.appendChild(t), t.submit(), document.body.removeChild(t)
+    }
+
+    function likeApp() {
+      if (!canLike) return alert("Vous avez déjà exprimé votre soutien pour cette session !"), !1;
+      totalLikes += 1, localStorage.setItem('baneWorkoutLikes', totalLikes.toString()), canLike = !1, localStorage.setItem('baneWorkoutCanLike', 'false'), document.getElementById('like-app-button').disabled = !0, document.getElementById('like-app-button').textContent = "❤️ MERCI POUR VOTRE SOUTIEN !"
+    }
+    const articles = {
+      hydration: {
+        title: "💧 L'HYDRATATION : LE PILIER OUBLIÉ DE LA PERFORMANCE ET DE LA SANTÉ",
+        emote: "💧",
+        content: `<h3>LE RÔLE VITAL DE L'EAU ET L'OSMOLARITÉ</h3><p>L'eau est le solvant universel, crucial pour la régulation thermique et le transport des nutriments. Techniquement, une déshydratation de 2% de la masse corporelle peut réduire la force musculaire jusqu'à 10%. L'<strong>osmolarité</strong> des fluides est essentielle : le ratio de solutés (électrolytes) par rapport au solvant (eau) dans le sang doit être maintenu pour une fonction cellulaire optimale. Un déséquilibre entraîne une perte de volume cellulaire, ce qui signale un état catabolique (destruction du muscle).</p><h3>IMPACT NEUROMUSCULAIRE ET ÉLECTROLYTIQUE</h3><p>Les électrolytes (Sodium, Potassium, Magnésium, Calcium) sont vitaux pour la transmission des signaux nerveux et la contraction musculaire. Le sodium, souvent diabolisé, est le plus critique pour maintenir le volume plasmatique. Une carence peut causer une <strong>hyponatrémie</strong> d'effort, perturbant la fonction du système nerveux central et réduisant la force maximale.</p><h3>PROTOCOLE D'HYDRATATION TECHNIQUE</h3><ul><li><strong>Base (hors entraînement) :</strong> 3 à 4 litres par jour. L'urine doit être de couleur paille claire.</li><li><strong>Pendant l'entraînement :</strong> Visez 7 à 10 ml d'eau par kg de poids corporel par heure d'effort intense. Si l'effort dépasse 60 minutes, une boisson d'effort isotonique contenant 400-600 mg de sodium par litre est recommandée.</li><li><strong>Post-entraînement :</strong> Réhydrater à 150% du poids perdu. Exemple : si vous perdez 1 kg pendant la séance, buvez 1,5 litre d'eau/électrolytes.</li></ul>`
+      },
+      creatine: {
+        title: "⚡ LA CRÉATINE MONOHYDRATE : MÉCANISMES AVANCÉS DE L'ATP ET DE L'HYPERTROPHIE",
+        emote: "⚡",
+        content: `<h3>LA CHIMIE DE LA PUISSANCE EXPLOSIVE (SYSTÈME PHOSPHAGÈNE)</h3><p>La Créatine (Cr) fonctionne dans le système énergétique le plus rapide : le système ATP-PCr. L'ATP se dégrade en ADP pour libérer de l'énergie. La Phosphocréatine (PCr) agit comme un 'donneur de phosphate' pour recharger l'ADP en ATP via l'enzyme <strong>créatine kinase</strong>. Cette resynthèse rapide permet de maintenir des efforts de très haute intensité (force maximale, sprints) sur une courte durée (0-10 secondes). La saturation en Cr augmente ce 'pool' d'énergie immédiate.</p><h3>HYPERTROPHIE PAR VOLUME CELLULAIRE</h3><p>Au-delà de l'énergie, la créatine augmente le volume d'eau dans la cellule musculaire (hydratation cellulaire). Ce gonflement cellulaire est un signal anabolique, qui mime le stress mécanique et peut stimuler l'expression des gènes myogéniques, favorisant la synthèse protéique. C'est l'effet 'volumateur' de la créatine.</p><h3>DOSAGE ET BIO-DISPONIBILITÉ</h3><ul><li><strong>Dose d'entretien :</strong> 5 grammes par jour (peu importe le timing, la saturation est clé).</li><li><strong>Option de charge (rapide) :</strong> 20 grammes par jour (4x5g) pendant 5 à 7 jours, suivi de la dose d'entretien. Cette phase sature les réserves plus vite.</li><li><strong>Bio-disponibilité :</strong> La prise avec des glucides simples (jus de fruit) améliore l'absorption en provoquant un pic d'insuline qui transporte la créatine vers le muscle.</li></ul>`
+      },
+      recovery: {
+        title: "😴 RÉCUPÉRATION : LA SYNTHÈSE PROTÉIQUE ET LA GESTION DU STRESS MÉCANIQUE",
+        emote: "😴",
+        content: `<h3>DE L'EXERCICE À L'ANABOLISME (MPS)</h3><p>La croissance musculaire (Hypertrophie) est le résultat d'un taux de Synthèse Protéique Musculaire (MPS) supérieur au taux de Dégradation Protéique Musculaire (MPB). L'entraînement crée un MPB élevé. La récupération doit maximiser le MPS. Ceci est déclenché par l'apport en **Leucine** (acide aminé) et le repos.</p><h3>LE RÔLE DE L'HORMONE DE CROISSANCE ET DU CORTISOL</h3><p>Le **sommeil paradoxal et lent** est le pic de libération de l'Hormone de Croissance (GH), vitale pour la réparation tissulaire. Le **Cortisol** (hormone du stress) est nécessaire, mais un niveau chronique élevé inhibe l'action de la testostérone et favorise le catabolisme (destruction des protéines). Un équilibre nutritionnel (vitamines, lipides) et un sommeil suffisant sont la seule façon de contrôler ce ratio anabolique/catabolique.</p><h3>STRATÉGIES DE RÉCUPÉRATION AVANCÉE</h3><ul><li><strong>Nutrition :</strong> Ratio Glucides/Protéines de 3:1 post-entraînement pour maximiser le remplissage de glycogène et l'insuline.</li><li><strong>Délai :</strong> Assurez un apport en protéines toutes les 3-4 heures pour maintenir le MPS élevé (protocole d'alimentation pulsatile).</li><li><strong>Sommeil :</strong> Objectif de 8 heures. Technique de **"Sleep Hygiene"** (pas d'écran 1h avant, chambre froide et noire) est cruciale.</li></ul>`
+      },
+      vitamins: {
+        title: "🍎 VITAMINES & MINÉRAUX : LES CO-FACTEURS ENZYMATIQUES ET LA BIOLOGIE DU MUSCLE",
+        emote: "🍎",
+        content: `<h3>LES MICRONUTRIMENTS COMME CATALYSEURS</h3><p>Les micronutriments (vitamines et minéraux) n'apportent pas d'énergie directement, mais agissent comme des **co-facteurs enzymatiques**. Sans eux, les enzymes (protéines qui accélèrent les réactions) ne peuvent pas fonctionner, bloquant ainsi le métabolisme (production d'énergie, synthèse hormonale).</p><h3>LES DÉFICITS CLÉS POUR LE SPORTIF</h3><ul><li>**Vitamine D3 :** Agit comme une hormone stéroïdienne. Un taux optimal (>50 ng/mL) est corrélé à une meilleure densité osseuse, une fonction immunitaire accrue et un taux de testostérone plus stable. Un déficit est la norme en automne/hiver.</li><li>**Magnésium :** Impliqué dans plus de 300 réactions, y compris la production d'ATP, la synthèse protéique et la régulation du système nerveux. Une carence est la cause principale de crampes et de mauvaise qualité de sommeil.</li><li>**Zinc :** Essentiel pour la production de testostérone libre et le fonctionnement du système immunitaire. La transpiration peut accélérer sa perte.</li></ul><p><strong>Correction technique :</strong> Privilégiez les formes biodisponibles (ex: Glycinate ou Bisglycinate de Magnésium) pour maximiser l'absorption et éviter les problèmes digestifs.</p>`
+      },
+      crampes: {
+        title: "🩹 LES CRAMPES : DÉSÉQUILIBRE OSMOTIQUE ET FATIGUE NEURALE PERIPHÉRIQUE",
+        emote: "🩹",
+        content: `<h3>L'ORIGINE NEURO-MUSCULAIRE DES SPASMES</h3><p>La théorie des crampes liées à l'effort physique (EAMC) repose sur un dysfonctionnement du contrôle neuromusculaire. L'hypothèse la plus récente suggère une fatigue du **motoneurone périphérique** qui mène à une hyperexcitabilité. En gros, le muscle se fatigue, le signal neural devient anarchique et le muscle se contracte de manière incontrôlée.</p><h3>LE RÔLE DU MAGNÉSIUM ET DE LA CONTRACTION</h3><p>Le **Magnésium** est un antagoniste du Calcium. Il est essentiel pour la relaxation musculaire (le Calcium étant nécessaire à la contraction). Un faible taux de Magnésium ou un déséquilibre Sodium/Potassium augmente le risque d'hyperexcitabilité du muscle.</p><h3>PRÉVENTION PAR LA DENSITÉ NUTRITIONNELLE</h3><ul><li><strong>Liquide :</strong> Utiliser des boissons de réhydratation orales avec des ratios précis de sodium, potassium et glucose.</li><li><strong>Micro-nutrition :</strong> Augmenter l'apport en Potassium (légumes verts, patates douces) et en Magnésium (graines de citrouille, noix).</li><li><strong>Préparation :</strong> Incorporer un échauffement dynamique et des exercices de mobilité spécifiques pour augmenter le flux sanguin et préparer les fuseaux neuromusculaires.</li></ul>`
+      },
+      hormones: {
+        title: "🧪 OPTIMISATION HORMONALE : L'AXE HPTA ET LE RATIO TESTOSTÉRONE/CORTISOL",
+        emote: "🧪",
+        content: `<h3>L'AXE HYPOTHALAMO-HYPOPHYSO-TESTICULAIRE (HPTA)</h3><p>La production de testostérone est régulée par cet axe : l'hypothalamus envoie des signaux à l'hypophyse, qui stimule les testicules. Le corps a un mécanisme de rétroaction négative (Feedback Loop) : si la testostérone est trop élevée, l'axe ralentit. L'entraînement lourd aux mouvements composés est un des plus puissants **stimulateurs naturels** de l'HPTA.</p><h3>LE CORTISOL COMME INDICATEUR DE SURENTRAÎNEMENT</h3><p>Le Cortisol est catabolique et antagoniste à la testostérone. Le **ratio Testostérone/Cortisol (T:C)** est le marqueur le plus fiable du stress sportif. Un ratio bas signifie un état de surentraînement ou de stress chronique. La régulation passe par la réduction du volume total d'entraînement (pas l'intensité) et l'augmentation du sommeil.</p><h3>STRATÉGIES NUTRITIONNELLES POUR L'ANABOLISME</h3><ol><li>**Cholestérol :** Les stéroïdes (Testostérone) sont synthétisés à partir du cholestérol. Maintenir un apport suffisant en lipides de qualité (graisses saines, au moins 25% des calories totales) est non négociable pour la production hormonale.</li><li>**Vitamines et Minéraux :** Zinc, Magnésium (ZMA) et Vitamine D sont des co-facteurs essentiels dans la chaîne de production hormonale.</li></ol>`
+      },
+      protein: {
+        title: "🍗 LES PROTÉINES : LEUCINE ET ACTIVATION DU CHEMIN MTOR POUR LA CROISSANCE",
+        emote: "🍗",
+        content: `<h3>LA LEUCINE ET LE CHEMIN MTOR</h3><p>La Leucine, un des trois Acides Aminés à Chaîne Ramifiée (BCAA), est l'acide aminé le plus important pour déclencher la Synthèse Protéique Musculaire (MPS). Elle agit comme un signal direct pour activer la voie de signalisation **mTOR** (mammalian Target Of Rapamycin), qui est le 'bouton' d'activation de la croissance musculaire.</p><h3>LE SEUIL DE LEUCINE</h3><p>Pour maximiser le MPS lors d'un repas, vous devez atteindre un seuil de Leucine de 2.5 à 3 grammes. Cela équivaut généralement à 25-40 grammes de protéine de haute qualité (Whey, viande maigre, œufs). Consommer moins de 20g de protéines ou une source de mauvaise qualité n'activera pas mTOR au maximum.</p><h3>RÉPARTITION ET DIGESTIBILITÉ</h3><ul><li><strong>Quantité :</strong> Visez 1.8g/kg (masse) à 2.2g/kg (sèche).</li><li><strong>Distribution :</strong> Répartissez votre apport en 4 à 6 repas (ou collations riches en protéines) espacés de 3-4 heures pour maintenir l'activation de mTOR tout au long de la journée.</li><li><strong>Qualité :</strong> La **Valeur Biologique** de la source protéique (sa facilité d'utilisation par le corps) est plus importante que la quantité brute. Les œufs et la Whey sont au sommet.</li></ul>`
+      },
+      sleep: {
+        title: "🌙 SOMMEIL ET NEURO-RÉCUPÉRATION : LA DETTE DE SOMMEIL ET LE STRESS",
+        emote: "🌙",
+        content: `<h3>RÉCUPÉRATION DU SYSTÈME NERVEUX CENTRAL (SNC)</h3><p>L'entraînement lourd ne fatigue pas seulement les muscles, il épuise le SNC (transmission nerveuse). C'est la **fatigue centrale**. Le sommeil est le seul moyen de restaurer les neurotransmetteurs et l'homéostasie du SNC. Une dette de sommeil (manque chronique) réduit la capacité à recruter les fibres musculaires (force) et augmente la perception de l'effort.</p><h3>L'IMPACT SUR LES HORMONES DE LA FAIM</h3><p>Le manque de sommeil dérégule deux hormones clés de l'appétit :</p><ul><li><strong>Ghrelin (hormone de la faim) :</strong> Augmente.</li><li><strong>Leptin (hormone de la satiété) :</strong> Diminue.</li></ul><p>Ceci mène à une augmentation des fringales de glucides et de gras, rendant la sèche ou le maintien de diète extrêmement difficile.</p><h3>HYGIÈNE DE SOMMEIL (SLEEP HYGIENE)</h3><ul><li>**Régularité :** Coucher et réveil à heures fixes, même le week-end.</li><li>**Environnement :** Pièce noire, silencieuse et fraîche (18°C idéalement).</li><li>**Supplémentation :** L-Théanine et Magnésium peuvent aider à induire un sommeil profond sans créer de dépendance comme la Mélatonine.</li></ul>`
+      },
+      overtraining: {
+        title: "🥵 LE SURENTRAÎNEMENT SYNDROME (OTS) : DIAGNOSTIC ET GESTION DU SYSTÈME NERVEUX",
+        emote: "🥵",
+        content: `<h3>LE DYSFONCTIONNEMENT AUTONOME</h3><p>Le surentraînement (OTS) est un syndrome caractérisé par un déséquilibre de la branche autonome du système nerveux. On observe souvent une dominance du **système sympathique** (combat/fuite) et une difficulté à engager le **système parasympathique** (repos/digestion).</p><h3>MARQUEURS BIOCHIMIQUES D'ALERTE</h3><p>En plus des signes subjectifs (fatigue, irritabilité), certains marqueurs sont élevés :</p><ul><li>**Taux de Cortisol au Réveil** (plus haut que la normale).</li><li>**Faible taux de Testostérone** (détérioration du ratio T:C).</li><li>**Faible Taux de Glutamine** (marqueur d'un système immunitaire affaibli).</li></ul><h3>LA SOLUTION : LA PÉRIODISATION ET LE DELOAD</h3><ul><li>**Le Deload :** 5 à 7 jours de repos complet ou de travail à 40-50% du 1RM habituel pour permettre au SNC de se restaurer. Le muscle récupère plus vite que le SNC.</li><li>**Périodisation :** Intégrer des blocs d'entraînement moins intenses ou des semaines de repos planifiées dans l'année pour éviter d'atteindre le point de non-retour de l'OTS.</li></ul>`
+      },
+      cutdiet: {
+        title: "📉 SÈCHE AVANCÉE : LA GESTION DE LA FAIM ET L'ADAPTATION MÉTABOLIQUE",
+        emote: "📉",
+        content: `<h3>L'ADAPTATION MÉTABOLIQUE (METABOLIC ADAPTATION)</h3><p>Lorsque vous êtes en déficit calorique prolongé, le corps s'adapte en réduisant sa dépense énergétique (TDEE). C'est la **résistance à la perte de poids** (Plateau). Pour contrer cela :</p><ul><li>**Refeeds (Jours de Recharge) :** 1 jour par semaine ou toutes les 2 semaines avec un surplus de calories (majoritairement glucides) pour relancer les hormones (Leptine) qui régulent la faim et le métabolisme.</li><li>**Ajustements Progressifs :** Ne jamais couper les calories de plus de 500 kcal d'un coup. Coupez de 100 kcal par 2 semaines pour laisser le corps s'adapter.</li></ul><h3>CONTRÔLE DE LA SATIÉTÉ</h3><p>Prioriser les aliments à haute densité nutritive et faible densité calorique : légumes verts, protéines maigres. Le volume dans l'estomac est un signal de satiété.</p>`
+      },
+      bulkdiet: {
+        title: "📈 MASSE AVANCÉE : HYPERPLASIE, SENSITIVITÉ À L'INSULINE ET SURPLUS MAÎTRISÉ",
+        emote: "📈",
+        content: `<h3>L'HYPERPLASIE MUSCULAIRE</h3><p>L'Hypertrophie (augmentation de la taille des fibres) est l'objectif principal. Cependant, certains chercheurs pensent que l'Hyperplasie (création de nouvelles fibres) peut être stimulée par des méthodes avancées (ex: étirement sous forte charge). La **Surcharge Progressive** (voir autre formation) est le moteur de ces deux processus.</p><h3>MAINTENIR LA SENSITIVITÉ À L'INSULINE</h3><p>En surplus calorique, le risque de devenir **insulino-résistant** augmente. Un muscle insulino-sensible stocke les glucides en glycogène (muscle) et non en gras. Pour maintenir cette sensibilité :</p><ul><li>**Fibre :** Consommez beaucoup de fibres (légumes, céréales complètes) pour ralentir l'absorption du glucose.</li><li>**Timing :** Concentrez les glucides rapides après la séance, quand l'insuline est la plus efficace.</li></ul>`
+      },
+      carbsTiming: {
+        title: "🍚 TIMING GLUCIDES : CYCLAGE ET PERI-ENTRAÎNEMENT",
+        emote: "🍚",
+        content: `<h3>LA FENÊTRE PÉRI-ENTRAÎNEMENT (PWO)</h3><p>La fenêtre de 1 à 3 heures avant et juste après l'entraînement est le moment où la **Translocation GLUT4** est la plus efficace. Les transporteurs GLUT4, indépendamment de l'insuline, acheminent le glucose vers le muscle. C'est le moment idéal pour consommer la majorité de vos glucides pour minimiser le stockage de graisses.</p><h3>LE CYCLAGE GLUCIDIQUE (CARB CYCLING)</h3><p>En sèche ou en maintien, le Carb Cycling est une méthode pour optimiser les réserves de glycogène :</p><ul><li><strong>Jours Hauts :</strong> Jours d'entraînement intenses (Jambes, Dos). Glucides élevés, Lipides bas.</li><li><strong>Jours Bas :</strong> Jours de repos ou d'entraînement légers (Bras, Épaules). Glucides bas (principalement légumes), Lipides un peu plus hauts.</li></ul>`
+      },
+      flexiblediet: {
+        title: "🍕 IIFYM : PSYCHOLOGIE NUTRITIONNELLE ET DENSITÉ MICRO-NUTRITIVE",
+        emote: "🍕",
+        content: `<h3>LES LIMITES DE L'HOMÉOSTASIE CALORIQUE</h3><p>Bien que les macros soient le facteur déterminant, le corps ne fonctionne pas en vase clos. La nourriture "poubelle" (faible en micronutriments) peut créer des carences qui affectent l'énergie, l'humeur et le sommeil, même si les macros sont respectées. Le corps a besoin de **nutriments de signalisation**.</p><h3>LE PRINCIPE DU 80/20</h3><p>Adoptez une approche 80% **Densité Nutritive** (aliments bruts, non transformés) et 20% **Densité Psychologique** (plaisir, IIFYM). Cela garantit la couverture des besoins en micronutriments tout en offrant la flexibilité nécessaire à une adhésion à long terme.</p>`
+      },
+      postworkout: {
+        title: "🥤 NUTRITION POST-WORKOUT : RECHARGE DE GLYCOGÈNE ET LEUCINE CIBLE",
+        emote: "🥤",
+        content: `<h3>LE SHAKER IDÉAL (RAPIDE)</h3><p>L'objectif est d'arrêter le **Catabolisme** (destruction musculaire) et d'amorcer l'Anabolisme. L'insuline est l'hormone la plus anti-catabolique :</p><ul><li><strong>Protéine :</strong> 0.4 - 0.5g/kg (Ex : 30g de Whey). La Whey a un indice de vitesse de digestion et un pic de Leucine très élevés.</li><li><strong>Glucides :</strong> 0.8 - 1.2g/kg (Ex : 60g de Dextrose/Maltodextrine). Les sucres rapides sont prioritaires pour une resynthèse rapide du glycogène.</li></ul><h3>LE REPAS SOLIDE (PLUS LENT)</h3><p>Si vous mangez un repas solide dans l'heure, la fenêtre n'est pas critique. Un repas avec de la viande, du riz et des légumes fonctionne très bien, car l'effet du repas dure des heures.</p>`
+      },
+      mindmuscle: {
+        title: "🧠 CONNEXION ESPRIT-MUSCLE : NEUROBIOLOGIE DE LA CONTRACTION OPTIMALE",
+        emote: "🧠",
+        content: `<h3>LE RECRUTEMENT DES UNITÉS MOTRICES</h3><p>La connexion esprit-muscle (MMC) est la capacité à augmenter le **recrutement préférentiel** des unités motrices du muscle cible. En vous concentrant sur la contraction, vous améliorez l'activation des **fibres de Type II** (fibres rapides, plus susceptibles de croître). C'est la qualité de la contraction, pas le poids, qui maximise l'hypertrophie.</p><h3>TEMPO ET TENSION CONSTANTE</h3><ul><li><strong>Ralentissement Excentrique :</strong> La phase négative de 3-4 secondes endommage le plus les fibres et augmente le temps sous tension (TUT), signal majeur de l'hypertrophie.</li><li><strong>Tension de Pic (Pause) :</strong> Tenir la contraction en haut du mouvement (ex: Biceps) pour isoler le muscle en éliminant l'aide des muscles stabilisateurs ou du momentum.</li></ul>`
+      },
+      progressives: {
+        title: "🪜 SURCHARGE PROGRESSIVE : PÉRIODISATION ET VOLUME DE TRAVAIL (SETs x REPS x CHARGE)",
+        emote: "🪜",
+        content: `<h3>LE VOLUME COMME VARIABLE CLÉ</h3><p>Le volume de travail (Séries x Répétitions x Charge) est le prédicteur le plus fort de l'hypertrophie. La surcharge progressive consiste à augmenter ce volume au fil des semaines. Ne pas progresser est la définition du maintien, pas de la croissance.</p><h3>LES 4 MODÈLES DE PÉRIODISATION</h3><ul><li><strong>Linéaire :</strong> Augmentation du poids (intensité) et baisse du volume au fil des semaines.</li><li><strong>Ondulatoire (DUP) :</strong> Variation de l'intensité et du volume au sein de la même semaine (Ex: Jour 1 Force, Jour 2 Hypertrophie). C'est souvent plus efficace pour le pratiquant avancé.</li><li><strong>Fréquence :</strong> Augmenter la fréquence (nombre de fois où vous travaillez un muscle par semaine).</li></ul>`
+      },
+      warmup: {
+        title: "🔥 ÉCHAUFFEMENT DYNAMIQUE : PRÉPARATION NEURALE ET AUGMENTATION DU FLUX SANGUIN",
+        emote: "🔥",
+        content: `<h3>L'EFFET DE POTENTIATION POST-ACTIVATION (PAP)</h3><p>Un échauffement bien structuré utilise la **Post-Activation Potentiation (PAP)** : quelques séries très lourdes et de faible volume (après l'échauffement) pour augmenter temporairement la force explosive, en rendant le système nerveux plus réactif pour les séries de travail suivantes.</p><h3>LE PROTOCOLE DE L'ÉCHAUFFEMENT SPÉCIFIQUE</h3><ol><li><strong>Général (5 min) :</strong> Augmentation de la température centrale.</li><li><strong>Mobilité (5 min) :</strong> Pour les articulations ciblées.</li><li><strong>Séries d'Approche (5 min) :</strong> Augmenter progressivement la charge sur le premier exercice (Ex : 50% de la charge de travail, puis 75%, sans aller à l'échec).</li></ol>`
+      },
+      mobility: {
+        title: "🧘 MOBILITÉ FONCTIONNELLE : LA PRÉVENTION DES PATHOLOGIES ARTICULAIRES (ÉPAULES/HANCHES)",
+        emote: "🧘",
+        content: `<h3>LA DIFFÉRENCE KINÉSIOLOGIQUE</h3><p>La mobilité est le travail actif des muscles autour de l'articulation (rôle des stabilisateurs). La flexibilité est la longueur des muscles. Une mauvaise mobilité de l'épaule peut mener à un **Conflit Sous-Acromial** (épaule) ou une mauvaise mobilité des hanches/chevilles rendra le squat lourd impossible (risque de blessure lombaire).</p><h3>TESTS ET CORRECTIONS CLÉS</h3><ul><li><strong>Test du Squat :</strong> Si vos talons se soulèvent, vous avez un manque de mobilité de la cheville. Correction : "Ankle Rocks", étirements du tibial antérieur.</li><li><strong>Test de la Rotation Externe :</strong> Si vous avez les coudes en avant au Développé Couché, votre rotation d'épaule manque. Correction : Band Pull-Aparts, rotations externes légères.</li></ul>`
+      },
+      tempo: {
+        title: "⏱️ TEMPO TRAINING : L'USAGE DE LA TENSION ET DU TUT POUR L'HYPERTROPHIE MÉTABOLIQUE",
+        emote: "⏱️",
+        content: `<h3>TEMPS SOUS TENSION (TUT)</h3><p>Le TUT est le temps total où le muscle est sous tension mécanique pendant la série. Un TUT élevé (40-70 secondes) maximise l'**hypertrophie métabolique** (l'accumulation de sous-produits comme le lactate qui signalent la croissance). Le Tempo est l'outil pour contrôler ce TUT.</p><h3>UTILISATION PRATIQUE</h3><p>Pour la force, un tempo (X-0-1-0) est idéal (Explosif). Pour l'hypertrophie, un tempo (3-1-1-0) ou (4-0-1-0) est supérieur : ralentir l'excentrique (3 ou 4) maximise le TUT et le dommage musculaire.</p>`
+      },
+      delts: {
+        title: "💥 ÉPAULES 3D : L'IMPORTANCE DE L'ARRIÈRE ET LE PRINCIPE DE LA LARGEUR",
+        emote: "💥",
+        content: `<h3>LA PRIORITÉ EST AUX TÊTES LATÉRALES ET POSTÉRIEURES</h3><p>La tête antérieure est déjà sur-sollicitée (Développé couché, pompes). La largeur de l'épaule vient de la tête **latérale** (élévations latérales). La posture et l'épaisseur viennent de la tête **postérieure** (arrière) :</p><ul><li><strong>Élévations Latérales :</strong> Faire en série longue (15-20 reps) et en tension constante (pas de repos en bas). Utiliser un tempo de 3-0-1-0 pour éviter le momentum.</li><li><strong>Facepull :</strong> Exercice roi pour l'arrière de l'épaule et la coiffe des rotateurs (santé). À faire en série légère et très contrôlée.</li></ul>`
+      },
+      stretching: {
+        title: "🧘‍♀️ ÉTIREMENTS : IMPACT SUR LA PERFORMANCE, LE DOMS ET LA PRÉVENTION DES BLESSURES",
+        emote: "🧘‍♀️",
+        content: `<h3>LES DOMS ET L'ÉLASTICITÉ</h3><p>L'étirement post-entraînement peut aider à réduire les **DOMS** (douleurs musculaires à apparition retardée) en augmentant le flux sanguin et en aidant à éliminer les métabolites. Cependant, l'effet est marginal comparé à une bonne hydratation.</p><h3>QUAND FAIRE DU STATIQUE ?</h3><p>Un étirement statique prolongé avant l'entraînement peut réduire la production de force (jusqu'à 5%). Il faut donc les réserver aux jours de repos ou juste après l'entraînement. Les étirements dynamiques sont à privilégier avant.</p>`
+      },
+      biofeedback: {
+        title: "🔬 BIOFEEDBACK : L'ÉCOUTE DU CORPS ET LA FRÉQUENCE CARDIAQUE",
+        emote: "🔬",
+        content: `<h3>LE RATING OF PERCEIVED EXERTION (RPE)</h3><p>Le RPE (Échelle de l'effort perçu) est un outil de biofeedback essentiel :</p><ul><li><strong>RPE 10 :</strong> Impossible de faire une répétition de plus.</li><li><strong>RPE 8 :</strong> Il vous reste 2 répétitions en réserve.</li></ul><p>Adapter votre charge journalière en fonction du RPE (surtout après un mauvais sommeil) est une forme de **Périodisation Auto-Régulée** (ARP).</p><h3>VARIABILITÉ DE LA FRÉQUENCE CARDIAQUE (HRV)</h3><p>La mesure de la HRV est un marqueur objectif de l'état de votre Système Nerveux Autonome. Une HRV basse au réveil signifie que votre corps est en état de stress (SNC non récupéré) : c'est un signal pour prendre un jour de repos ou faire un Deload.</p>`
+      },
+      fatloss: {
+        title: "🔥 LA LIPOLYSE : DÉCODER LA COMBUSTION DES GRAISSES (CATÉCHOLAMINES ET HSL)",
+        emote: "🔥",
+        content: `<h3>LIPOLYSE VS OXYDATION</h3><p>La **Lipolyse** est la libération des graisses (triglycérides) stockées en acides gras libres (AGL). L'**Oxydation** est la combustion de ces AGL pour l'énergie. Sans Lipolyse, pas d'Oxydation.</p><h3>LE RÔLE DE L'HSL ET DES CATÉCHOLAMINES</h3><p>L'hormone **HSL** (Hormone Sensitive Lipase) est l'enzyme clé de la Lipolyse. Elle est activée par les **Catécholamines** (Adrénaline, Noradrénaline), qui augmentent pendant l'exercice cardiovasculaire et l'entraînement à haute intensité. L'insuline est l'ennemi de l'HSL : c'est pourquoi il est préférable de ne pas avoir de glucides rapides avant le cardio à jeun.</p>`
+      },
+      flexibility: {
+        title: "🤸 FLEXIBILITÉ ET AMORTISSEMENT DES CHOCS : TENDONS ET LIGAMENTS",
+        emote: "🤸",
+        content: `<h3>LA MATRICE EXTRACELLULAIRE (MEC)</h3><p>Les tendons et ligaments sont composés de collagène. Leur rôle est d'amortir la charge et de transmettre la force. Ils s'adaptent beaucoup plus lentement que le muscle (mois, voire années).</p><h3>RENFORCEMENT DES TENDONS</h3><p>La meilleure façon de renforcer les tendons est le travail **isométrique** (tenir une position sous charge) et les exercices en **amplitude complète** (ROM), car cela augmente la vascularisation et la rigidité tendineuse.</p>`
+      },
+      fasting: {
+        title: "🍽️ JEÛNE INTERMITTENT (IF) : AUTOPHAGIE, INSULINE ET HORMONES",
+        emote: "🍽️",
+        content: `<h3>LE MÉCANISME DE L'AUTOPHAGIE</h3><p>Le jeûne (au-delà de 12-16 heures) déclenche l'**Autophagie**, un processus de nettoyage cellulaire où le corps détruit les protéines endommagées et les organites pour en créer de nouvelles. Cela peut avoir des avantages pour la longévité et la fonction cellulaire.</p><h3>CONTRE-INDICATIONS ET APPLICATION SPORTIVE</h3><p>Le jeûne n'est pas supérieur à un régime à calories égales pour la perte de poids, mais il est un excellent outil de **simplification de la diète**. Cependant, pour la prise de masse, il est difficile de consommer toutes les calories nécessaires dans une fenêtre de repas limitée (8 heures).</p>`
+      },
+      periodization: {
+        title: "📅 PÉRIODISATION : L'ORGANISATION DE VOTRE MACRO-CYCLE D'ENTRAÎNEMENT",
+        emote: "📅",
+        content: `<h3>DU MICRO AU MACRO-CYCLE</h3><p>La périodisation est la planification stratégique de l'entraînement :</p><ul><li><strong>Micro-cycle :</strong> 1 semaine de travail (Ex : 5 séances).</li><li><strong>Méso-cycle :</strong> 3-6 semaines de travail (Bloc d'hypertrophie, force, ou deload).</li><li><strong>Macro-cycle :</strong> L'année entière, planifiant la sèche, la masse et les pics de force.</li></ul><h3>ÉVITER LE PLATEAU</h3><p>En variant l'intensité (poids) et le volume (séries/réps) de façon cyclique, vous évitez l'adaptation du corps et l'épuisement nerveux (OTS). Le changement constant force la progression.</p>`
+      },
+      hypertrophy: {
+        title: "💪 LES 3 VOIES DE L'HYPERTROPHIE : MÉCANIQUE, MÉTABOLIQUE ET DOMMAGE",
+        emote: "💪",
+        content: `<h3>1. TENSION MÉCANIQUE (FORCE)</h3><p>Le facteur le plus important. C'est la charge lourde (70-85% du 1RM) et le fait de pousser près de l'échec. La tension est le signal principal pour la croissance.</p><h3>2. STRESS MÉTABOLIQUE (CONGESTION)</h3><p>L'accumulation de métabolites (acide lactique, H+), souvent en séries longues (15-20 reps) et courtes pauses. C'est le sentiment de "brûlure" et de "pompe".</p><h3>3. DOMMAGE MUSCULAIRE (DOMS)</h3><p>L'endommagement des fibres, surtout par la phase excentrique (négative) lente. Le corps répare plus fort (Hypertrophie). Un dommage excessif (DOMS extrêmes) est contre-productif pour la récupération.</p>`
+      },
+      pliometrics: {
+        title: "🏃 PLIOMÉTRIE ET PUISSANCE : L'UTILISATION DU CYCLE ÉTIREMENT-RACCOURCISSEMENT",
+        emote: "🏃",
+        content: `<h3>LE SSC (STRETCH-SHORTENING CYCLE)</h3><p>La Pliométrie est l'entraînement de la puissance (force x vitesse). Il utilise le cycle **Étirement-Raccourcissement (SSC)** : l'énergie emmagasinée lors de l'étirement rapide (Ex: atterrissage d'un saut) est libérée de manière explosive lors du raccourcissement (le saut lui-même).</p><h3>AVANTAGES POUR LE SPORTIF DE FORCE</h3><p>L'intégration de la pliométrie (Sauts, Lancer de ballon) améliore l'efficacité du système nerveux, augmente le taux de développement de la force (RFD) et permet de soulever des charges plus lourdes de manière plus explosive (meilleure vitesse d'exécution).</p>`
+      },
+      corestability: {
+        title: "🛡️ STABILITÉ DU 'CORE' : DE LA FONCTION À LA PERFORMANCE (BRACING ET ANTI-ROTATION)",
+        emote: "🛡️",
+        content: `<h3>LE 'CORE' N'EST PAS QUE L'ABDOMINAL</h3><p>Le Core (tronc) est le centre de transfert de la force. Il inclut les abdominaux profonds (Transverse, Obliques) et les lombaires. Un Core faible réduit la capacité à transférer la force des jambes au haut du corps et vice-versa.</p><h3>BRACING ET ANTI-ROTATION</h3><ul><li><strong>Bracing :</strong> Technique de respiration et de contraction isométrique pour stabiliser le tronc (comme se préparer à recevoir un coup). Essentiel pour le Squat et le Soulevé de Terre.</li><li><strong>Anti-Rotation :</strong> Exercices (Ex: Pallof Press) qui forcent le Core à résister à une rotation, renforçant la fonction stabilisatrice.</li></ul>`
+      },
+      fatmetabolism: {
+        title: "🥑 MÉTABOLISME DES LIPIDES : LES GRAISSES SATUREES, INSATUREES ET LES OMEGA-3",
+        emote: "🥑",
+        content: `<h3>LE RÔLE STRUCTUREL ET HORMONAL DES LIPIDES</h3><p>Les lipides (graisses) ne sont pas seulement de l'énergie, ils forment les membranes cellulaires et sont le précurseur des hormones stéroïdiennes (Testostérone, Œstrogène). Un régime trop faible en lipides (moins de 20% des calories) peut altérer la production hormonale.</p><h3>L'IMPORTANCE DES OMÉGA-3</h3><p>Les Oméga-3 (ALA, EPA, DHA) sont des acides gras polyinsaturés anti-inflammatoires. Ils sont cruciaux pour la santé cardiovasculaire et la réduction de l'inflammation causée par l'entraînement intense. Un ratio Oméga-6 / Oméga-3 déséquilibré favorise l'inflammation chronique.</p>`
+      },
+      caloriedeficit: {
+        title: "⚖️ LE DÉFICIT CALORIQUE : THÉORIE VS PRATIQUE (L'ADAPTATION) ET LES TRAPPES",
+        emote: "⚖️",
+        content: `<h3>LA PREMIÈRE LOI DE LA THERMODYNAMIQUE</h3><p>Perdre du poids = Calories Entrantes < Calories Sortantes. C'est non négociable. Mais le corps n'est pas une simple calculatrice : le TDEE varie en réponse au déficit (adaptation métabolique).</p><h3>LES TRAPPES DE LA PERTE DE POIDS</h3><ul><li><strong>NEAT (Non-Exercise Activity Thermogenesis) :</strong> Votre corps, en déficit, réduit inconsciemment votre NEAT (vous bougez moins, vous gesticulez moins). Cela réduit votre TDEE.</li><li><strong>Baisse du Taux T3/T4 :</strong> Les hormones thyroïdiennes ralentissent, réduisant votre métabolisme de base (BMR).</li></ul><p>Solution : Maintenir l'intensité de l'entraînement et augmenter les dépenses par l'activité volontaire (marche quotidienne).</p>`
+      },
+      mindfulness: {
+        title: "🧘 MINDFULNESS ET PERFORMANCE : GESTION DE L'ANXIÉTÉ DE PERFORMANCE",
+        emote: "🧘",
+        content: `<h3>LE STRESS ET LA RÉCUPÉRATION CENTRALE</h3><p>Le stress psychologique (travail, vie) augmente le cortisol et freine la récupération musculaire. Le **Mindfulness** (pleine conscience) et la méditation sont des outils pour engager le Système Nerveux Parasympathique (repos) et réduire le cortisol basal.</p><h3>L'IMPACT SUR LA SÉANCE</h3><p>L'anxiété de performance (avant un record personnel ou une compétition) peut nuire à l'exécution. Les techniques de respiration (cohérence cardiaque) avant une série lourde améliorent la concentration et réduisent la tension nerveuse.</p>`
+      },
+      bloodflow: {
+        title: "🩸 RESTRICTION DE FLUX SANGUIN (BFR) : L'HYPERTROPHIE À FAIBLE CHARGE",
+        emote: "🩸",
+        content: `<h3>KAATSU TRAINING (OCCLUSION)</h3><p>Le BFR (Blood Flow Restriction) consiste à placer des bandes élastiques autour de la partie proximale du membre pour restreindre le retour veineux, tout en gardant l'apport artériel. Le muscle est gonflé de sang (pompe) et l'entraînement est fait avec une charge très faible (20-40% du 1RM).</p><h3>MÉCANISME</h3><p>L'accumulation de métabolites (acide lactique, H+) et l'hypoxie (manque d'oxygène) dans le muscle, même à faible charge, créent un stress métabolique énorme, signalant une forte réponse anabolique. Idéal pour les blessures ou les jours de Deload.</p>`
+      },
+      injuryprevention: {
+        title: "🩺 PRÉVENTION DES BLESSURES : ÉCHAUFFEMENT CIBLÉ ET GESTION DE LA FATIGUE",
+        emote: "🩺",
+        content: `<h3>LE PRINCIPE DU TISSU CIBLE</h3><p>Les blessures surviennent souvent lorsque le tissu (muscle, tendon) est exposé à une charge qu'il ne peut pas tolérer. La prévention passe par deux étapes :</p><ul><li><strong>Tolérance au Stress :</strong> Augmenter progressivement la force des tendons et ligaments (voir Flexibilité).</li><li><strong>Gestion de la Charge :</strong> Ne pas faire de sauts soudains de volume ou d'intensité. C'est le changement soudain qui blesse.</li></ul><h3>LA SOLUTION DES ÉLÉMENTS FAIBLES</h3><p>Identifier et renforcer vos maillons faibles (souvent les rotateurs d'épaule, les fessiers) pour stabiliser les mouvements composés (Squat/Deadlift).</p>`
+      },
+      trainingintensity: {
+        title: "📈 L'INTENSITÉ : RIR (REPS IN RESERVE), ÉCHEC ET SURCHARGE PAR RÉSISTANCE",
+        emote: "📈",
+        content: `<h3>LE CONCEPT DU RIR (REPS IN RESERVE)</h3><p>Le RIR (Répétitions en Réserve) est la meilleure façon de quantifier l'intensité : un RIR 2 signifie qu'il vous reste 2 répétitions avant l'échec technique. Pour l'hypertrophie : visez RIR 1 à RIR 3.</p><h3>L'ÉCHEC MUSCULAIRE</h3><p>L'échec musculaire (impossibilité de faire une autre répétition) n'est pas nécessaire à chaque série. Il génère une forte fatigue nerveuse (OTS). Réservez-le à la dernière série de votre exercice d'isolation ou de finition.</p>`
+      },
+      femalephysiology: {
+        title: "♀️ PHYSIOLOGIE FÉMININE : CYCLE, HORMONES ET ADAPTATIONS D'ENTRAÎNEMENT",
+        emote: "♀️",
+        content: `<h3>LE CYCLE MENSTRUEL ET LA PERFORMANCE</h3><p>Les variations d'œstrogène et de progestérone tout au long du cycle ont un impact :</p><ul><li><strong>Phase Folliculaire (J1-J14, après les règles) :</strong> Œstrogène haut. Meilleur moment pour l'entraînement de **force et de puissance**.</li><li><strong>Phase Lutéale (J15-J28) :</strong> Progestérone haut. Tendance à une température centrale plus élevée (moins d'endurance). Meilleur pour le travail de **volume et la récupération** doit être priorisée.</li></ul><h3>BESOINS NUTRITIONNELS SPÉCIFIQUES</h3><p>Les femmes ont un besoin accru en Fer (à cause des menstruations) et en Calcium (densité osseuse) que les hommes. Le risque de blessure au ligament croisé antérieur (LCA) est plus élevé durant la phase Folliculaire.</p>`
+      }
+    };
+
+    function isTrainingPurchased(t) {
+      return purchasedTrainings.includes(t)
+    }
+
+    function savePurchasedTrainings() {
+      localStorage.setItem('baneWorkoutPurchasedTrainings', JSON.stringify(purchasedTrainings))
+    }
+
+    function handleTrainingPurchase(t, e) {
+      const n = document.getElementById('userEmail').value.trim();
+      if (!n || !n.includes('@') || !n.includes('.')) return alert("Veuillez d'abord remplir une adresse email valide (Onglet Programme > Étape 1) afin d'assurer le déblocage et le suivi de votre achat de formation."), !1;
+      if (isTrainingPurchased(t)) return alert(`La formation "${e}" est déjà déverrouillée.`), !1;
+      const o = 1.99;
+      const a = encodeURIComponent(`Achat Formation BANE WORKOUT - ${e} (${o.toFixed(2)} EUR) - Déblocage`),
+        r = `Bonjour,\n\nJ'ai effectué l'achat de la formation "${e}" via l'application BANE WORKOUT au prix de ${o.toFixed(2)} EUR. Veuillez trouver ci-dessous mes informations de récapitulatif.\n\n- Email Client : ${n}\n- ID Formation : ${t}\n\nUne fois le paiement PayPal effectué, j'envoie cet email afin de vous prévenir de mon achat et de solliciter le déblocage.\n\nCordialement.\n`;
+      const l = encodeURIComponent(r);
+      redirectToPayPal(e, o);
+      alert(`Vous allez être redirigé vers PayPal pour le paiement de ${o.toFixed(2)} €. Après le paiement, un e-mail de confirmation s'ouvrira (Mailto). Vous DEVEZ cliquer sur 'Envoyer' dans cet e-mail pour finaliser la commande et obtenir le déblocage.`);
+      const i = `mailto:${hexToString(OWNEREMAILHASH)}?subject=${a}&body=${l}`;
+      window.open(i, '_blank')
+    }
+
+    function renderTrainingGrid() {
+      const t = document.getElementById('training-grid');
+      t.innerHTML = '';
+      for (const [e, n] of Object.entries(articles)) {
+        const o = document.createElement('div');
+        o.className = 'resource-item', o.setAttribute('data-key', e);
+        const a = n.title.split(' : ');
+        o.innerHTML = `<div class="training-lock-icon">${n.emote}</div><div class="resource-title-main">${a.length>1?a[1]:a[0].substring(3)}</div><p style="font-size: 0.7em; color: #aaa; margin-top: 2px; font-weight: normal; line-height: 1;">${a[0].split(' ')[0]}</p>`;
+        const r = isTrainingPurchased(e);
+        if (r) {
+          o.onclick = () => showArticle(e), o.setAttribute('data-unlocked', 'true'), o.querySelector('.training-lock-icon').style.color = '#fff'
+        } else {
+          const l = document.createElement('div');
+          l.className = 'training-lock', l.innerHTML = `<div class="training-lock-icon">🔒</div><div class="training-lock-price">1,99 €</div><button class="buy-button-training" onclick="event.stopPropagation(); handleTrainingPurchase('${e}','${a[0].substring(3)}')">ACHETER (1,99 €)</button>`;
+          o.appendChild(l)
+        }
+        t.appendChild(o)
+      }
+    }
+
+    function showArticle(t) {
+      const e = articles[t];
+      if (!e) return;
+      if (!isTrainingPurchased(t)) return alert("Veuillez acheter la formation pour la déverrouiller !"), !1;
+      document.getElementById('article-title').textContent = e.title, document.getElementById('article-body').innerHTML = e.content, document.getElementById('articleModal').style.display = 'block';
+      const n = document.getElementById('article-star-rating');
+      const o = n.cloneNode(!0);
+      n.parentNode.replaceChild(o, n);
+      o.querySelectorAll('span').forEach(t => {
+        t.addEventListener('click', e => {
+          const n = e.target.getAttribute('data-value');
+          o.querySelectorAll('span').forEach(t => {
+            t.style.color = t.getAttribute('data-value') <= n ? '#FFC107' : '#555'
+          }), document.getElementById('article-rating-message').textContent = `Merci pour votre note de ${n} étoiles sur cette formation !`
+        }), t.addEventListener('mouseover', e => {
+          const n = e.target.getAttribute('data-value');
+          o.querySelectorAll('span').forEach(t => {
+            t.style.color = t.getAttribute('data-value') <= n ? '#FFC107' : '#999'
+          })
+        }), t.addEventListener('mouseout', () => {
+          let t = o.querySelector('span[style*="color: rgb(255, 193, 7)"]'),
+            e = t ? t.getAttribute('data-value') : 0;
+          o.querySelectorAll('span').forEach(t => {
+            t.style.color = t.getAttribute('data-value') <= e ? '#FFC107' : '#555'
+          })
+        })
+      })
+    }
+
+    function closeArticleModal() {
+      document.getElementById('articleModal').style.display = 'none'
+    }
+  </script>
+</body>
+
+</html>
+    
+  </body>
+  
+</html>
